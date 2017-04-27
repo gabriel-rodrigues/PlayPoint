@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B62DD291EB171810082244F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD281EB171810082244F /* AppDelegate.swift */; };
+		7B62DD2B1EB171810082244F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD2A1EB171810082244F /* ViewController.swift */; };
+		7B62DD2E1EB171810082244F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD2C1EB171810082244F /* Main.storyboard */; };
+		7B62DD301EB171810082244F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD2F1EB171810082244F /* Assets.xcassets */; };
+		7B62DD331EB171810082244F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD311EB171810082244F /* LaunchScreen.storyboard */; };
+		7B62DD3E1EB171810082244F /* PlayPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD3D1EB171810082244F /* PlayPointTests.swift */; };
+		7B62DD491EB171810082244F /* PlayPointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD481EB171810082244F /* PlayPointUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B62DD3A1EB171810082244F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B62DD1D1EB171810082244F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B62DD241EB171810082244F;
+			remoteInfo = PlayPoint;
+		};
+		7B62DD451EB171810082244F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B62DD1D1EB171810082244F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B62DD241EB171810082244F;
+			remoteInfo = PlayPoint;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B62DD251EB171810082244F /* PlayPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B62DD281EB171810082244F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B62DD2A1EB171810082244F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B62DD2D1EB171810082244F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7B62DD2F1EB171810082244F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B62DD321EB171810082244F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7B62DD341EB171810082244F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B62DD391EB171810082244F /* PlayPointTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayPointTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B62DD3D1EB171810082244F /* PlayPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPointTests.swift; sourceTree = "<group>"; };
+		7B62DD3F1EB171810082244F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B62DD441EB171810082244F /* PlayPointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayPointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B62DD481EB171810082244F /* PlayPointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPointUITests.swift; sourceTree = "<group>"; };
+		7B62DD4A1EB171810082244F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B62DD221EB171810082244F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B62DD361EB171810082244F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B62DD411EB171810082244F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B62DD1C1EB171810082244F = {
+			isa = PBXGroup;
+			children = (
+				7B62DD271EB171810082244F /* PlayPoint */,
+				7B62DD3C1EB171810082244F /* PlayPointTests */,
+				7B62DD471EB171810082244F /* PlayPointUITests */,
+				7B62DD261EB171810082244F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B62DD261EB171810082244F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B62DD251EB171810082244F /* PlayPoint.app */,
+				7B62DD391EB171810082244F /* PlayPointTests.xctest */,
+				7B62DD441EB171810082244F /* PlayPointUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B62DD271EB171810082244F /* PlayPoint */ = {
+			isa = PBXGroup;
+			children = (
+				7B62DD281EB171810082244F /* AppDelegate.swift */,
+				7B62DD2A1EB171810082244F /* ViewController.swift */,
+				7B62DD2C1EB171810082244F /* Main.storyboard */,
+				7B62DD2F1EB171810082244F /* Assets.xcassets */,
+				7B62DD311EB171810082244F /* LaunchScreen.storyboard */,
+				7B62DD341EB171810082244F /* Info.plist */,
+			);
+			path = PlayPoint;
+			sourceTree = "<group>";
+		};
+		7B62DD3C1EB171810082244F /* PlayPointTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B62DD3D1EB171810082244F /* PlayPointTests.swift */,
+				7B62DD3F1EB171810082244F /* Info.plist */,
+			);
+			path = PlayPointTests;
+			sourceTree = "<group>";
+		};
+		7B62DD471EB171810082244F /* PlayPointUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7B62DD481EB171810082244F /* PlayPointUITests.swift */,
+				7B62DD4A1EB171810082244F /* Info.plist */,
+			);
+			path = PlayPointUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B62DD241EB171810082244F /* PlayPoint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B62DD4D1EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPoint" */;
+			buildPhases = (
+				7B62DD211EB171810082244F /* Sources */,
+				7B62DD221EB171810082244F /* Frameworks */,
+				7B62DD231EB171810082244F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayPoint;
+			productName = PlayPoint;
+			productReference = 7B62DD251EB171810082244F /* PlayPoint.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B62DD381EB171810082244F /* PlayPointTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B62DD501EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPointTests" */;
+			buildPhases = (
+				7B62DD351EB171810082244F /* Sources */,
+				7B62DD361EB171810082244F /* Frameworks */,
+				7B62DD371EB171810082244F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B62DD3B1EB171810082244F /* PBXTargetDependency */,
+			);
+			name = PlayPointTests;
+			productName = PlayPointTests;
+			productReference = 7B62DD391EB171810082244F /* PlayPointTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7B62DD431EB171810082244F /* PlayPointUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B62DD531EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPointUITests" */;
+			buildPhases = (
+				7B62DD401EB171810082244F /* Sources */,
+				7B62DD411EB171810082244F /* Frameworks */,
+				7B62DD421EB171810082244F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B62DD461EB171810082244F /* PBXTargetDependency */,
+			);
+			name = PlayPointUITests;
+			productName = PlayPointUITests;
+			productReference = 7B62DD441EB171810082244F /* PlayPointUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B62DD1D1EB171810082244F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Iesb;
+				TargetAttributes = {
+					7B62DD241EB171810082244F = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 9737X87RWT;
+						ProvisioningStyle = Automatic;
+					};
+					7B62DD381EB171810082244F = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 9737X87RWT;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7B62DD241EB171810082244F;
+					};
+					7B62DD431EB171810082244F = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 9737X87RWT;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7B62DD241EB171810082244F;
+					};
+				};
+			};
+			buildConfigurationList = 7B62DD201EB171810082244F /* Build configuration list for PBXProject "PlayPoint" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B62DD1C1EB171810082244F;
+			productRefGroup = 7B62DD261EB171810082244F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B62DD241EB171810082244F /* PlayPoint */,
+				7B62DD381EB171810082244F /* PlayPointTests */,
+				7B62DD431EB171810082244F /* PlayPointUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B62DD231EB171810082244F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B62DD331EB171810082244F /* LaunchScreen.storyboard in Resources */,
+				7B62DD301EB171810082244F /* Assets.xcassets in Resources */,
+				7B62DD2E1EB171810082244F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B62DD371EB171810082244F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B62DD421EB171810082244F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B62DD211EB171810082244F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B62DD2B1EB171810082244F /* ViewController.swift in Sources */,
+				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B62DD351EB171810082244F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B62DD3E1EB171810082244F /* PlayPointTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B62DD401EB171810082244F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B62DD491EB171810082244F /* PlayPointUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B62DD3B1EB171810082244F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B62DD241EB171810082244F /* PlayPoint */;
+			targetProxy = 7B62DD3A1EB171810082244F /* PBXContainerItemProxy */;
+		};
+		7B62DD461EB171810082244F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B62DD241EB171810082244F /* PlayPoint */;
+			targetProxy = 7B62DD451EB171810082244F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7B62DD2C1EB171810082244F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B62DD2D1EB171810082244F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7B62DD311EB171810082244F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B62DD321EB171810082244F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B62DD4B1EB171810082244F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B62DD4C1EB171810082244F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B62DD4E1EB171810082244F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9737X87RWT;
+				INFOPLIST_FILE = PlayPoint/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPoint;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7B62DD4F1EB171810082244F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9737X87RWT;
+				INFOPLIST_FILE = PlayPoint/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPoint;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7B62DD511EB171810082244F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9737X87RWT;
+				INFOPLIST_FILE = PlayPointTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayPoint.app/PlayPoint";
+			};
+			name = Debug;
+		};
+		7B62DD521EB171810082244F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9737X87RWT;
+				INFOPLIST_FILE = PlayPointTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayPoint.app/PlayPoint";
+			};
+			name = Release;
+		};
+		7B62DD541EB171810082244F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 9737X87RWT;
+				INFOPLIST_FILE = PlayPointUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PlayPoint;
+			};
+			name = Debug;
+		};
+		7B62DD551EB171810082244F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 9737X87RWT;
+				INFOPLIST_FILE = PlayPointUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PlayPoint;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B62DD201EB171810082244F /* Build configuration list for PBXProject "PlayPoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B62DD4B1EB171810082244F /* Debug */,
+				7B62DD4C1EB171810082244F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B62DD4D1EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B62DD4E1EB171810082244F /* Debug */,
+				7B62DD4F1EB171810082244F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7B62DD501EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPointTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B62DD511EB171810082244F /* Debug */,
+				7B62DD521EB171810082244F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7B62DD531EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPointUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B62DD541EB171810082244F /* Debug */,
+				7B62DD551EB171810082244F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B62DD1D1EB171810082244F /* Project object */;
+}
