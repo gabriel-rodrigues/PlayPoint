@@ -74,6 +74,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B6B500F1EB173860043AE80 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1B6B50101EB173900043AE80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1B6B50111EB1739F0043AE80 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B62DD311EB171810082244F /* LaunchScreen.storyboard */,
+				7B62DD2C1EB171810082244F /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		7B62DD1C1EB171810082244F = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +120,12 @@
 		7B62DD271EB171810082244F /* PlayPoint */ = {
 			isa = PBXGroup;
 			children = (
+				1B6B50111EB1739F0043AE80 /* Views */,
+				1B6B50101EB173900043AE80 /* Models */,
+				1B6B500F1EB173860043AE80 /* Controllers */,
 				7B62DD281EB171810082244F /* AppDelegate.swift */,
 				7B62DD2A1EB171810082244F /* ViewController.swift */,
-				7B62DD2C1EB171810082244F /* Main.storyboard */,
 				7B62DD2F1EB171810082244F /* Assets.xcassets */,
-				7B62DD311EB171810082244F /* LaunchScreen.storyboard */,
 				7B62DD341EB171810082244F /* Info.plist */,
 			);
 			path = PlayPoint;
@@ -419,6 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9737X87RWT;
 				INFOPLIST_FILE = PlayPoint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9737X87RWT;
 				INFOPLIST_FILE = PlayPoint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,6 +472,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9737X87RWT;
 				INFOPLIST_FILE = PlayPointTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,6 +488,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 9737X87RWT;
 				INFOPLIST_FILE = PlayPointTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -475,6 +503,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9737X87RWT;
 				INFOPLIST_FILE = PlayPointUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +518,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9737X87RWT;
 				INFOPLIST_FILE = PlayPointUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPointUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +546,7 @@
 				7B62DD4F1EB171810082244F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B62DD501EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPointTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +555,7 @@
 				7B62DD521EB171810082244F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B62DD531EB171810082244F /* Build configuration list for PBXNativeTarget "PlayPointUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +564,7 @@
 				7B62DD551EB171810082244F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
