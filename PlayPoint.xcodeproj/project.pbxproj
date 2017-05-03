@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D71B1EBA8AEB00957A2F /* EventosViewController.swift */; };
+		7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D71E1EBA903500957A2F /* EventoTableViewCell.swift */; };
 		7B62DD291EB171810082244F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD281EB171810082244F /* AppDelegate.swift */; };
-		7B62DD2B1EB171810082244F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD2A1EB171810082244F /* ViewController.swift */; };
 		7B62DD2E1EB171810082244F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD2C1EB171810082244F /* Main.storyboard */; };
 		7B62DD301EB171810082244F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD2F1EB171810082244F /* Assets.xcassets */; };
 		7B62DD331EB171810082244F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD311EB171810082244F /* LaunchScreen.storyboard */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B56D71B1EBA8AEB00957A2F /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
+		7B56D71E1EBA903500957A2F /* EventoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoTableViewCell.swift; sourceTree = "<group>"; };
 		7B62DD251EB171810082244F /* PlayPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B62DD281EB171810082244F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B62DD2A1EB171810082244F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B62DD2D1EB171810082244F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B62DD2F1EB171810082244F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B62DD321EB171810082244F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		1B6B500F1EB173860043AE80 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7B56D71B1EBA8AEB00957A2F /* EventosViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -91,10 +94,19 @@
 		1B6B50111EB1739F0043AE80 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7B56D71D1EBA901700957A2F /* Classes */,
 				7B62DD311EB171810082244F /* LaunchScreen.storyboard */,
 				7B62DD2C1EB171810082244F /* Main.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		7B56D71D1EBA901700957A2F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7B56D71E1EBA903500957A2F /* EventoTableViewCell.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		7B62DD1C1EB171810082244F = {
@@ -124,7 +136,6 @@
 				1B6B50101EB173900043AE80 /* Models */,
 				1B6B500F1EB173860043AE80 /* Controllers */,
 				7B62DD281EB171810082244F /* AppDelegate.swift */,
-				7B62DD2A1EB171810082244F /* ViewController.swift */,
 				7B62DD2F1EB171810082244F /* Assets.xcassets */,
 				7B62DD341EB171810082244F /* Info.plist */,
 			);
@@ -286,8 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B62DD2B1EB171810082244F /* ViewController.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
+				7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */,
+				7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
