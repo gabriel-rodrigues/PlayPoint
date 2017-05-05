@@ -47,7 +47,7 @@ extension EventosViewController : UITableViewDataSource {
         
         let celula = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! EventoTableViewCell
         
-        celula.nomeEnvetoLabel.text = "TESTANDO A BAGACEIRA ESSA POHODA TODA VALENDO VAMOS VER SE VAI DAR BOM ESSA TELA POR FAVOR"
+        celula.nomeEnvetoLabel.text = "Skate Sinistro"
         
         return celula
     }

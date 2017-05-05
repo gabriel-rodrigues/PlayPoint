@@ -11,6 +11,7 @@
 		7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D71E1EBA903500957A2F /* EventoTableViewCell.swift */; };
 		7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D7201EBAA9C700957A2F /* NovoEventoTableViewController.swift */; };
 		7B56D7231EBAB6CD00957A2F /* DetalheEventoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */; };
+		7B56D7251EBBFFA700957A2F /* PerfilTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */; };
 		7B62DD291EB171810082244F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD281EB171810082244F /* AppDelegate.swift */; };
 		7B62DD2E1EB171810082244F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD2C1EB171810082244F /* Main.storyboard */; };
 		7B62DD301EB171810082244F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD2F1EB171810082244F /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		7B56D71E1EBA903500957A2F /* EventoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoTableViewCell.swift; sourceTree = "<group>"; };
 		7B56D7201EBAA9C700957A2F /* NovoEventoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovoEventoTableViewController.swift; sourceTree = "<group>"; };
 		7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheEventoTableViewController.swift; sourceTree = "<group>"; };
+		7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilTableViewController.swift; sourceTree = "<group>"; };
 		7B62DD251EB171810082244F /* PlayPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B62DD281EB171810082244F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B62DD2D1EB171810082244F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				7B56D71B1EBA8AEB00957A2F /* EventosViewController.swift */,
 				7B56D7201EBAA9C700957A2F /* NovoEventoTableViewController.swift */,
 				7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */,
+				7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
 				7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */,
+				7B56D7251EBBFFA700957A2F /* PerfilTableViewController.swift in Sources */,
 				7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */,
 				7B56D7231EBAB6CD00957A2F /* DetalheEventoTableViewController.swift in Sources */,
 			);
