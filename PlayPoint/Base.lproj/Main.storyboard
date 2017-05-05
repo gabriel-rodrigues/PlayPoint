@@ -39,13 +39,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbv-9b-YRl">
-                                                    <rect key="frame" x="86" y="8" width="540" height="21"/>
+                                                    <rect key="frame" x="86" y="8" width="248" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBx-9B-HcI">
-                                                    <rect key="frame" x="86" y="33" width="540" height="18"/>
+                                                    <rect key="frame" x="86" y="33" width="248" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.70183402299880981" green="0.70170962810516357" blue="0.7181963324546814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data e Hora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMb-6D-i32">
-                                                    <rect key="frame" x="86" y="55" width="540" height="18"/>
+                                                    <rect key="frame" x="86" y="55" width="248" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.70183402299880981" green="0.70170962810516357" blue="0.7181963324546814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                             <outlet property="fotoImavem" destination="Xmz-Jj-hRT" id="WmT-ye-d1P"/>
                                             <outlet property="localLabel" destination="gBx-9B-HcI" id="gG5-Dp-T6u"/>
                                             <outlet property="nomeEnvetoLabel" destination="rbv-9b-YRl" id="dC8-7u-JJW"/>
-                                            <segue destination="9nY-m6-b7s" kind="show" id="zo3-GL-SiI"/>
+                                            <segue destination="9nY-m6-b7s" kind="show" identifier="" id="zo3-GL-SiI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -106,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="-946" y="573"/>
         </scene>
-        <!--Detalhes Eventos-->
+        <!--Detalhes-->
         <scene sceneID="dd3-Xa-GbE">
             <objects>
                 <tableViewController id="9nY-m6-b7s" customClass="DetalheEventoTableViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
@@ -193,7 +193,7 @@
                             <outlet property="delegate" destination="9nY-m6-b7s" id="am9-5z-s5g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Detalhes Eventos" id="esx-Ie-8Fb">
+                    <navigationItem key="navigationItem" title="Detalhes" id="esx-Ie-8Fb">
                         <barButtonItem key="rightBarButtonItem" title="Participar" id="AVh-jd-cbY"/>
                     </navigationItem>
                 </tableViewController>
@@ -376,9 +376,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dn-F0-f1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="1156"/>
+            <point key="canvasLocation" x="954" y="1127"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Item-->
         <scene sceneID="itf-qH-Oso">
             <objects>
                 <tableViewController id="Yye-s3-7aa" sceneMemberID="viewController">
@@ -405,10 +405,12 @@
                             <outlet property="delegate" destination="Yye-s3-7aa" id="agL-6q-ziT"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="62e-4c-FA5"/>
+                    <navigationItem key="navigationItem" id="9dW-P4-Oh4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I65-QI-gal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="645"/>
+            <point key="canvasLocation" x="2668" y="573"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ohC-ak-opt">
@@ -422,17 +424,18 @@
                     <connections>
                         <segue destination="48Y-jh-3lT" kind="relationship" relationship="viewControllers" id="8uJ-0I-j2m"/>
                         <segue destination="NYb-wx-JNR" kind="relationship" relationship="viewControllers" id="C03-j1-BUK"/>
+                        <segue destination="XAe-ou-kuz" kind="relationship" relationship="viewControllers" id="z1j-cR-Axe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igg-wj-SKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-993" y="-275"/>
         </scene>
-        <!--Buscar-->
+        <!--Eventos-->
         <scene sceneID="wfA-Oh-D7x">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48Y-jh-3lT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Buscar" id="QBu-bx-4Wg"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Eventos" image="search_evento" id="QBu-bx-4Wg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s9r-7W-crm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -451,7 +454,7 @@
         <scene sceneID="Zqj-N6-Rrq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NYb-wx-JNR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Novo" id="fkC-AH-eXZ"/>
+                    <tabBarItem key="tabBarItem" title="Novo" image="novo_evento" id="fkC-AH-eXZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4SF-Mm-VR2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -464,9 +467,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ET-g0-cRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="645"/>
+            <point key="canvasLocation" x="38" y="573"/>
+        </scene>
+        <!--Perfil-->
+        <scene sceneID="4GM-2M-a7s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XAe-ou-kuz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Perfil" image="perfil" id="hux-sf-AyO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibx-7C-av8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yye-s3-7aa" kind="relationship" relationship="rootViewController" id="RfO-HE-Qae"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IsS-BF-akh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="573"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="novo_evento" width="25" height="25"/>
+        <image name="perfil" width="25" height="25"/>
+        <image name="search_evento" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bAJ-c6-6ye"/>
     </inferredMetricsTieBreakers>
