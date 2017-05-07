@@ -18,6 +18,7 @@
 		7B62DD331EB171810082244F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD311EB171810082244F /* LaunchScreen.storyboard */; };
 		7B62DD3E1EB171810082244F /* PlayPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD3D1EB171810082244F /* PlayPointTests.swift */; };
 		7B62DD491EB171810082244F /* PlayPointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD481EB171810082244F /* PlayPointUITests.swift */; };
+		7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7B62DD441EB171810082244F /* PlayPointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayPointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B62DD481EB171810082244F /* PlayPointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPointUITests.swift; sourceTree = "<group>"; };
 		7B62DD4A1EB171810082244F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				7B56D7201EBAA9C700957A2F /* NovoEventoTableViewController.swift */,
 				7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */,
 				7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */,
+				7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */,
 				7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
 				7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */,
