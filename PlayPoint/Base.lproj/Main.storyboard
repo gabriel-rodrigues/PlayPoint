@@ -699,17 +699,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garatimos que nunca vamos publicar algo sem sua permissão." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dp-KV-5gj">
-                                <rect key="frame" x="8" y="323" width="359" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-h8-ezH">
+                                <rect key="frame" x="16" y="140" width="343" height="159"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-Da-dY5">
-                                <rect key="frame" x="8" y="352" width="359" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="VlD-wL-gW4"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="336" width="343" height="30"/>
                                 <state key="normal" title="ENTRAR COM FACEBOOK">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -717,17 +711,37 @@
                                     <segue destination="3cC-PJ-tuf" kind="show" id="UdS-Al-K1h"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garatimos que nunca vamos publicar algo sem sua permissão." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dp-KV-5gj">
+                                <rect key="frame" x="16" y="307" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.59451687335968018" blue="0.0058014881797134876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9dp-KV-5gj" firstAttribute="centerX" secondItem="JrQ-E3-qW7" secondAttribute="centerX" id="39A-7X-WJZ"/>
-                            <constraint firstAttribute="trailing" secondItem="9dp-KV-5gj" secondAttribute="trailing" constant="8" id="5cu-3g-KSE"/>
-                            <constraint firstItem="9dp-KV-5gj" firstAttribute="leading" secondItem="JrQ-E3-qW7" secondAttribute="leading" constant="8" id="8pb-XE-HZs"/>
-                            <constraint firstItem="9dp-KV-5gj" firstAttribute="centerY" secondItem="JrQ-E3-qW7" secondAttribute="centerY" id="JQL-W5-db2"/>
-                            <constraint firstItem="KBo-Da-dY5" firstAttribute="trailing" secondItem="9dp-KV-5gj" secondAttribute="trailing" id="Vyb-T0-Fdi"/>
-                            <constraint firstItem="KBo-Da-dY5" firstAttribute="leading" secondItem="9dp-KV-5gj" secondAttribute="leading" id="e5J-fv-CYH"/>
-                            <constraint firstItem="KBo-Da-dY5" firstAttribute="top" secondItem="9dp-KV-5gj" secondAttribute="bottom" constant="8" id="q0x-h7-vzh"/>
+                            <constraint firstItem="9dp-KV-5gj" firstAttribute="top" secondItem="eYh-h8-ezH" secondAttribute="bottom" constant="8" id="33Y-p8-5y6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="eYh-h8-ezH" secondAttribute="leading" id="CR5-Qa-1da"/>
+                            <constraint firstItem="9dp-KV-5gj" firstAttribute="leading" secondItem="eYh-h8-ezH" secondAttribute="leading" id="EIt-WC-bPw"/>
+                            <constraint firstItem="eYh-h8-ezH" firstAttribute="top" secondItem="6Cd-13-cfW" secondAttribute="bottom" constant="120" id="O5c-14-mE1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eYh-h8-ezH" secondAttribute="trailing" id="dj0-iq-jCL"/>
+                            <constraint firstItem="KBo-Da-dY5" firstAttribute="leading" secondItem="9dp-KV-5gj" secondAttribute="leading" id="elR-OI-Kiz"/>
+                            <constraint firstItem="KBo-Da-dY5" firstAttribute="trailing" secondItem="9dp-KV-5gj" secondAttribute="trailing" id="hNU-jd-vfc"/>
+                            <constraint firstItem="KBo-Da-dY5" firstAttribute="top" secondItem="9dp-KV-5gj" secondAttribute="bottom" constant="8" id="ldv-hC-70R"/>
+                            <constraint firstItem="9dp-KV-5gj" firstAttribute="trailing" secondItem="eYh-h8-ezH" secondAttribute="trailing" id="oaR-qk-AO3"/>
+                            <constraint firstItem="eYh-h8-ezH" firstAttribute="centerY" secondItem="JrQ-E3-qW7" secondAttribute="centerY" id="pki-IC-rRK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pki-IC-rRK"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="O5c-14-mE1"/>
+                                <include reference="pki-IC-rRK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="loginUIButton" destination="KBo-Da-dY5" id="99Y-Bg-gd3"/>
@@ -735,7 +749,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dr-7K-7Jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2095.1999999999998" y="-313.49325337331339"/>
+            <point key="canvasLocation" x="-2098.4000000000001" y="-315.29235382308849"/>
         </scene>
         <!--Eventos-->
         <scene sceneID="wfA-Oh-D7x">
@@ -796,6 +810,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo" width="300" height="159"/>
         <image name="novo_evento" width="25" height="25"/>
         <image name="perfil" width="25" height="25"/>
         <image name="search_evento" width="25" height="25"/>

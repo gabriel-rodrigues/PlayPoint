@@ -19,6 +19,7 @@
 		7B62DD3E1EB171810082244F /* PlayPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD3D1EB171810082244F /* PlayPointTests.swift */; };
 		7B62DD491EB171810082244F /* PlayPointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD481EB171810082244F /* PlayPointUITests.swift */; };
 		7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */; };
+		7B9437301EC3E4FD005C9C0F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B94372E1EC3E4FD005C9C0F /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7B62DD481EB171810082244F /* PlayPointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPointUITests.swift; sourceTree = "<group>"; };
 		7B62DD4A1EB171810082244F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7B94372F1EC3E4FD005C9C0F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		7B62DD271EB171810082244F /* PlayPoint */ = {
 			isa = PBXGroup;
 			children = (
+				7B94372D1EC3E4DF005C9C0F /* CoreData */,
 				1B6B50111EB1739F0043AE80 /* Views */,
 				1B6B50101EB173900043AE80 /* Models */,
 				1B6B500F1EB173860043AE80 /* Controllers */,
@@ -170,6 +173,14 @@
 				7B62DD4A1EB171810082244F /* Info.plist */,
 			);
 			path = PlayPointUITests;
+			sourceTree = "<group>";
+		};
+		7B94372D1EC3E4DF005C9C0F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7B94372E1EC3E4FD005C9C0F /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 				7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */,
 				7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
+				7B9437301EC3E4FD005C9C0F /* Model.xcdatamodeld in Sources */,
 				7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */,
 				7B56D7251EBBFFA700957A2F /* PerfilTableViewController.swift in Sources */,
 				7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */,
@@ -595,6 +607,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7B94372E1EC3E4FD005C9C0F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7B94372F1EC3E4FD005C9C0F /* Model.xcdatamodel */,
+			);
+			currentVersion = 7B94372F1EC3E4FD005C9C0F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7B62DD1D1EB171810082244F /* Project object */;
 }
