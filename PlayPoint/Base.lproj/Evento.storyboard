@@ -248,11 +248,13 @@
             </objects>
             <point key="canvasLocation" x="1192.8" y="1372.263868065967"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Evento-->
         <scene sceneID="88c-gr-VbF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vOh-8E-r7h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Evento" image="novo_evento" id="J7f-0L-LUe"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YNI-cZ-Xwg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -267,4 +269,7 @@
             <point key="canvasLocation" x="-946.39999999999998" y="1373.1634182908547"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="novo_evento" width="25" height="25"/>
+    </resources>
 </document>

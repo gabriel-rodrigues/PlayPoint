@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XAe-ou-kuz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,37 +28,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4X-wQ-9ue">
-                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="lfh-bh-Sdg"/>
-                                                        <constraint firstAttribute="height" constant="70" id="nMY-Kp-AQF"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6p-gk-o2O">
-                                                    <rect key="frame" x="86" y="8" width="248" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario Desde" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR0-HH-pQA">
-                                                    <rect key="frame" x="86" y="33" width="248" height="18"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                    <color key="textColor" red="0.48226088285446167" green="0.48216253519058228" blue="0.49453258514404297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o3h-vW-iEf">
+                                                    <rect key="frame" x="8" y="8.5" width="326" height="70"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4X-wQ-9ue">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="lfh-bh-Sdg"/>
+                                                                <constraint firstAttribute="height" constant="70" id="nMY-Kp-AQF"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="rIN-Ob-VWD">
+                                                            <rect key="frame" x="80" y="0.0" width="246" height="40.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6p-gk-o2O">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario Desde" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR0-HH-pQA">
+                                                                    <rect key="frame" x="0.0" y="23.5" width="246" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="topMargin" secondItem="j4X-wQ-9ue" secondAttribute="top" id="0pY-iS-hfi"/>
-                                                <constraint firstItem="QR0-HH-pQA" firstAttribute="trailing" secondItem="w6p-gk-o2O" secondAttribute="trailing" id="Eaw-0i-gfA"/>
-                                                <constraint firstItem="w6p-gk-o2O" firstAttribute="leading" secondItem="j4X-wQ-9ue" secondAttribute="trailing" constant="8" id="GPs-x9-vWY"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="j4X-wQ-9ue" secondAttribute="leading" id="HXl-Gm-tiD"/>
-                                                <constraint firstItem="QR0-HH-pQA" firstAttribute="top" secondItem="w6p-gk-o2O" secondAttribute="bottom" constant="4.5" id="MvC-TV-JtY"/>
-                                                <constraint firstItem="w6p-gk-o2O" firstAttribute="top" secondItem="j4X-wQ-9ue" secondAttribute="top" id="WBO-uT-G9S"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="w6p-gk-o2O" secondAttribute="trailing" id="cKR-Z3-une"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="QR0-HH-pQA" secondAttribute="bottom" constant="25.5" id="cdL-0f-fBs"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="j4X-wQ-9ue" secondAttribute="bottom" constant="-1.5" id="vCh-CA-jJn"/>
-                                                <constraint firstItem="QR0-HH-pQA" firstAttribute="leading" secondItem="w6p-gk-o2O" secondAttribute="leading" id="vFs-lH-6ya"/>
+                                                <constraint firstItem="o3h-vW-iEf" firstAttribute="top" secondItem="h0i-te-9EX" secondAttribute="top" constant="8.5" id="5MD-O2-Blb"/>
+                                                <constraint firstItem="o3h-vW-iEf" firstAttribute="leading" secondItem="h0i-te-9EX" secondAttribute="leadingMargin" id="DfP-fI-EpP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="o3h-vW-iEf" secondAttribute="trailing" id="Xlw-Cl-jpK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -338,7 +345,6 @@
                     <tabBarItem key="tabBarItem" title="Perfil" image="perfil" id="hux-sf-AyO"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibx-7C-av8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
