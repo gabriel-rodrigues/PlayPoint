@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Esporte" representedClassName="Esporte" syncable="YES" codeGenerationType="class">
         <attribute name="descricao" attributeType="String" syncable="YES"/>
         <attribute name="identificadorImagem" attributeType="String" syncable="YES"/>
@@ -21,16 +21,16 @@
         <relationship name="evento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="local" inverseEntity="Evento" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES" codeGenerationType="class">
-        <attribute name="descricao" attributeType="String" syncable="YES"/>
+        <attribute name="dataCadastro" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="idFacebook" attributeType="String" syncable="YES"/>
         <attribute name="imagem" attributeType="Binary" syncable="YES"/>
         <attribute name="nomeCompleto" attributeType="String" syncable="YES"/>
         <relationship name="eventos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="usuarios" inverseEntity="Evento" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Esporte" positionX="-803" positionY="-286" width="128" height="88"/>
         <element name="Evento" positionX="-585" positionY="-63" width="128" height="148"/>
-        <element name="Esporte" positionX="-234" positionY="-108" width="128" height="90"/>
         <element name="Local" positionX="-387" positionY="198" width="128" height="105"/>
-        <element name="Usuario" positionX="-909" positionY="18" width="128" height="120"/>
+        <element name="Usuario" positionX="-936" positionY="27" width="128" height="118"/>
     </elements>
 </model>

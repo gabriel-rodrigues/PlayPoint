@@ -12,10 +12,14 @@ class EventosViewController: UIViewController {
 
     public let cellIdentifier = "celulaEvento"
     
+    @IBOutlet weak var tableView: UITableView!
+   
+    internal let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.configurarSearchController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +28,16 @@ class EventosViewController: UIViewController {
     }
     
 
+    func configurarSearchController() {
+        
+        self.searchController.searchResultsUpdater             = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder            = "Buscar"
+        self.searchController.searchBar.setValue("Cancelar", forKey: "_cancelButtonText")
+        self.tableView.tableHeaderView                         = searchController.searchBar
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -50,5 +64,13 @@ extension EventosViewController : UITableViewDataSource {
         celula.nomeEnvetoLabel.text = "Skate Sinistro"
         
         return celula
+    }
+}
+
+
+extension EventosViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }
