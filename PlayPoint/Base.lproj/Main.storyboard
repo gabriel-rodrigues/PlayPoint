@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jP8-Vx-628">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -38,23 +38,24 @@
                         <viewControllerLayoutGuide type="bottom" id="CVH-f3-ZRe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JrQ-E3-qW7">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-h8-ezH">
-                                <rect key="frame" x="20" y="108" width="627" height="159"/>
+                                <rect key="frame" x="16" y="140" width="343" height="159"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBo-Da-dY5">
-                                <rect key="frame" x="20" y="304" width="627" height="30"/>
+                                <rect key="frame" x="16" y="336" width="343" height="30"/>
                                 <state key="normal" title="ENTRAR COM FACEBOOK">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="entrarComFacebook:" destination="jP8-Vx-628" eventType="touchUpInside" id="lYJ-r3-WS9"/>
                                     <segue destination="3cC-PJ-tuf" kind="show" id="UdS-Al-K1h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garatimos que nunca vamos publicar algo sem sua permissão." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dp-KV-5gj">
-                                <rect key="frame" x="20" y="275" width="627" height="21"/>
+                                <rect key="frame" x="16" y="307" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

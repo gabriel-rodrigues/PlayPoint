@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginUIButton: UIButton!
+    
+    private let permissoesFacebook = ["email", "user_birthday", "user_friends"]
+    private let parametros         = ["fields": "id, name, first_name, last_name, picture.type(large), email"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,5 +50,30 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    @IBAction func entrarComFacebook(_ sender: UIButton) {
+        
+        let facebookLoginManager = FBSDKLoginManager()
+        facebookLoginManager.logIn(withReadPermissions: self.permissoesFacebook, from: self) { (result, error) in
+            if error == nil {
+                let facebookLoginResult: FBSDKLoginManagerLoginResult = result!
+                if facebookLoginResult.grantedPermissions != nil {
+                    if facebookLoginResult.grantedPermissions.contains("email") {
+                        if FBSDKAccessToken.current() != nil {
+                            FBSDKGraphRequest(graphPath: "me", parameters: self.parametros).start(completionHandler: { (connection, result, error) in
+                                if error == nil {
+                                    let item = result as! [String : AnyObject]
+                                    print(result!)
+                                    print(item)
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }
