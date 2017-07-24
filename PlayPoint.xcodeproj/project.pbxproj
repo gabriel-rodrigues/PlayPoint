@@ -24,6 +24,9 @@
 		882AE387224FCA67CA6CC893 /* Pods_PlayPointTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE8221C3CE14A4A6557B9AF /* Pods_PlayPointTests.framework */; };
 		B65CCC75FE922784B6811F95 /* Pods_PlayPointUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C460E983B7666AB372AA76A /* Pods_PlayPointUITests.framework */; };
 		D74F1C741F23A7AB009AEB46 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F1C731F23A7AB009AEB46 /* CoreDataManager.swift */; };
+		D76E30F21F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
+		D76E30F31F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
+		D76E30F41F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
 		D7C0CA871F239BB30023ADDA /* Evento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C0CA851F239BB30023ADDA /* Evento.storyboard */; };
 		D7C0CA891F239C080023ADDA /* Eventos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C0CA881F239C080023ADDA /* Eventos.storyboard */; };
 		D7C0CA8C1F239C250023ADDA /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C0CA8A1F239C250023ADDA /* Perfil.storyboard */; };
@@ -74,6 +77,7 @@
 		9D4A23FC7CF9FFBC32481DED /* Pods-PlayPointTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayPointTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayPointTests/Pods-PlayPointTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7774738523B59B3D3A83316 /* Pods-PlayPointUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayPointUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayPointUITests/Pods-PlayPointUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D74F1C731F23A7AB009AEB46 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D76E30F11F26BB58007C9EEE /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		D7C0CA861F239BB30023ADDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Evento.storyboard; sourceTree = "<group>"; };
 		D7C0CA881F239C080023ADDA /* Eventos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eventos.storyboard; sourceTree = "<group>"; };
 		D7C0CA8B1F239C250023ADDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Perfil.storyboard; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		7B62DD271EB171810082244F /* PlayPoint */ = {
 			isa = PBXGroup;
 			children = (
+				D76E30F01F26BB47007C9EEE /* Commons */,
 				7B94372D1EC3E4DF005C9C0F /* CoreData */,
 				1B6B50111EB1739F0043AE80 /* Views */,
 				1B6B50101EB173900043AE80 /* Models */,
@@ -223,6 +228,14 @@
 				D74F1C731F23A7AB009AEB46 /* CoreDataManager.swift */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		D76E30F01F26BB47007C9EEE /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				D76E30F11F26BB58007C9EEE /* Segues.swift */,
+			);
+			name = Commons;
 			sourceTree = "<group>";
 		};
 		D7F9A3911F23B1CC00D6FD3D /* Frameworks */ = {
@@ -529,6 +542,7 @@
 				7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */,
 				7B56D7251EBBFFA700957A2F /* PerfilTableViewController.swift in Sources */,
 				D74F1C741F23A7AB009AEB46 /* CoreDataManager.swift in Sources */,
+				D76E30F21F26BB58007C9EEE /* Segues.swift in Sources */,
 				7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */,
 				7B56D7231EBAB6CD00957A2F /* DetalheEventoTableViewController.swift in Sources */,
 			);
@@ -539,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B62DD3E1EB171810082244F /* PlayPointTests.swift in Sources */,
+				D76E30F31F26BB58007C9EEE /* Segues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B62DD491EB171810082244F /* PlayPointUITests.swift in Sources */,
+				D76E30F41F26BB58007C9EEE /* Segues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

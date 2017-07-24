@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class PerfilTableViewController: UITableViewController {
 
@@ -81,5 +82,10 @@ class PerfilTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func sairAplicativo(_ sender: UIButton) {
+        
+        let facebookLoginManager = FBSDKLoginManager()
+        facebookLoginManager.logOut()
+    }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class EventosViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class EventosViewController: UIViewController {
         super.viewDidLoad()
 
         self.configurarSearchController()
+        self.configurarEmptyDataSource()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +40,14 @@ class EventosViewController: UIViewController {
         
     }
     
+    
+    func configurarEmptyDataSource() {
+        
+        self.tableView.emptyDataSetSource = self
+        //self.tableView.emptyDataSetDelegate = self
+        self.tableView.tableFooterView = UIView()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -50,11 +60,28 @@ class EventosViewController: UIViewController {
 
 }
 
+extension EventosViewController : DZNEmptyDataSetSource {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let mensagem = "Novos eventos"
+        return NSAttributedString(string: mensagem)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let mensagem = "Nenhum evento cadastrado até o momento."
+        let attrs    = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: mensagem, attributes: attrs)
+    }
+}
+
+
 extension EventosViewController : UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,6 +91,10 @@ extension EventosViewController : UITableViewDataSource {
         celula.nomeEnvetoLabel.text = "Skate Sinistro"
         
         return celula
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return #imageLiteral(resourceName: "novo_evento")
     }
 }
 

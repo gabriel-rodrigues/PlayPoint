@@ -22,6 +22,7 @@
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES" codeGenerationType="class">
         <attribute name="dataCadastro" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="email" attributeType="String" syncable="YES"/>
         <attribute name="idFacebook" attributeType="String" syncable="YES"/>
         <attribute name="imagem" attributeType="Binary" syncable="YES"/>
         <attribute name="nomeCompleto" attributeType="String" syncable="YES"/>
@@ -31,6 +32,6 @@
         <element name="Esporte" positionX="-803" positionY="-286" width="128" height="88"/>
         <element name="Evento" positionX="-585" positionY="-63" width="128" height="148"/>
         <element name="Local" positionX="-387" positionY="198" width="128" height="105"/>
-        <element name="Usuario" positionX="-936" positionY="27" width="128" height="118"/>
+        <element name="Usuario" positionX="-936" positionY="27" width="128" height="135"/>
     </elements>
 </model>

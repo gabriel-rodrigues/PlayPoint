@@ -13,7 +13,7 @@
         <!--Perfil-->
         <scene sceneID="itf-qH-Oso">
             <objects>
-                <tableViewController id="Yye-s3-7aa" sceneMemberID="viewController">
+                <tableViewController id="Yye-s3-7aa" customClass="PerfilTableViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fwm-Qz-utg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,21 +247,27 @@
                             </tableViewSection>
                             <tableViewSection id="zCZ-F8-Rje">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="p0r-0J-Sp1" style="IBUITableViewCellStyleDefault" id="Rhk-GK-rRx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rhk-GK-rRx">
                                         <rect key="frame" x="0.0" y="512" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rhk-GK-rRx" id="Yjr-m3-ebH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sair" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p0r-0J-Sp1">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-Ie-veh">
+                                                    <rect key="frame" x="172" y="6" width="30" height="30"/>
+                                                    <state key="normal" title="Sair">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="sairAplicativo:" destination="Yye-s3-7aa" eventType="touchUpInside" id="Mqe-Lk-eL7"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6fm-Ie-veh" firstAttribute="centerY" secondItem="Yjr-m3-ebH" secondAttribute="centerY" id="Lga-h9-yZI"/>
+                                                <constraint firstItem="6fm-Ie-veh" firstAttribute="centerX" secondItem="Yjr-m3-ebH" secondAttribute="centerX" id="aml-6v-wg3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -288,7 +294,7 @@
                 </tableViewSection>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I65-QI-gal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2905" y="573"/>
+            <point key="canvasLocation" x="2904.8000000000002" y="572.56371814092961"/>
         </scene>
         <!--Nome-->
         <scene sceneID="AhZ-TP-gNC">

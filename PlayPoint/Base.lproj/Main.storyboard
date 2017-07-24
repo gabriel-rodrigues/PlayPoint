@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jP8-Vx-628">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ohC-ak-opt">
             <objects>
-                <tabBarController id="3cC-PJ-tuf" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3cC-PJ-tuf" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="BC9-PD-mvO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -32,7 +32,7 @@
         <!--Login View Controller-->
         <scene sceneID="DLA-H2-t6q">
             <objects>
-                <viewController id="jP8-Vx-628" customClass="LoginViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jP8-Vx-628" customClass="LoginViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Cd-13-cfW"/>
                         <viewControllerLayoutGuide type="bottom" id="CVH-f3-ZRe"/>
@@ -51,7 +51,6 @@
                                 </state>
                                 <connections>
                                     <action selector="entrarComFacebook:" destination="jP8-Vx-628" eventType="touchUpInside" id="lYJ-r3-WS9"/>
-                                    <segue destination="3cC-PJ-tuf" kind="show" id="UdS-Al-K1h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garatimos que nunca vamos publicar algo sem sua permissão." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dp-KV-5gj">
@@ -88,6 +87,7 @@
                     </view>
                     <connections>
                         <outlet property="loginUIButton" destination="KBo-Da-dY5" id="99Y-Bg-gd3"/>
+                        <segue destination="3cC-PJ-tuf" kind="show" identifier="showTabBarController" id="ucp-Nd-fmn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dr-7K-7Jn" userLabel="First Responder" sceneMemberID="firstResponder"/>

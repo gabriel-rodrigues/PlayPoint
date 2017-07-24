@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        
         let borderAlpha: CGFloat  = 0.7
         let cornerRadius: CGFloat = 5.0
         
@@ -59,21 +60,24 @@ class LoginViewController: UIViewController {
         facebookLoginManager.logIn(withReadPermissions: self.permissoesFacebook, from: self) { (result, error) in
             if error == nil {
                 let facebookLoginResult: FBSDKLoginManagerLoginResult = result!
+                
                 if facebookLoginResult.grantedPermissions != nil {
-                    if facebookLoginResult.grantedPermissions.contains("email") {
-                        if FBSDKAccessToken.current() != nil {
-                            FBSDKGraphRequest(graphPath: "me", parameters: self.parametros).start(completionHandler: { (connection, result, error) in
-                                if error == nil {
-                                    let item = result as! [String : AnyObject]
-                                    print(result!)
-                                    print(item)
-                                }
-                            })
+                    FBSDKGraphRequest(graphPath: "me", parameters: self.parametros).start(completionHandler: { (connection, result, error) in
+                        if error == nil {
+                            let item = result as! [String : AnyObject]
+                            print(result!)
+                            print(item)
+                            
+                            self.performSegue(withIdentifier: Segue.showTabBarController.rawValue, sender: nil)
                         }
-                    }
+                    })
                 }
+                
             }
         }
+        
     }
+    
+    
 
 }
