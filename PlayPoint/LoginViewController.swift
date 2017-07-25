@@ -10,6 +10,8 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
+import SwiftSpinner
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
 
@@ -17,6 +19,7 @@ class LoginViewController: UIViewController {
     
     private let permissoesFacebook = ["email", "user_birthday", "user_friends"]
     private let parametros         = ["fields": "id, name, first_name, last_name, picture.type(large), email"]
+    private let manager            = UsuarioDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +46,19 @@ class LoginViewController: UIViewController {
     
 
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: - Navigation */
+ 
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        /*if let tabBarController = segue.destination as? UITabBarController {
+            if let navigationController = tabBarController.viewControllers?[0] as? UINavigationController {
+                if let controller = navigationController.topViewController as? EventosViewController {
+
+                }
+            }
+        }*/
+    }
     
     
     @IBAction func entrarComFacebook(_ sender: UIButton) {
@@ -64,9 +71,12 @@ class LoginViewController: UIViewController {
                 if facebookLoginResult.grantedPermissions != nil {
                     FBSDKGraphRequest(graphPath: "me", parameters: self.parametros).start(completionHandler: { (connection, result, error) in
                         if error == nil {
-                            let item = result as! [String : AnyObject]
-                            print(result!)
-                            print(item)
+                            SwiftSpinner.show("Configurando o primeiro acesso.")
+                            
+                            let usuarioItem = UsuarioItem(jsonFromLoginFacebook: JSON(result!))
+                            self.manager.adicionar(novo: usuarioItem)
+                            
+                            SwiftSpinner.hide()
                             
                             self.performSegue(withIdentifier: Segue.showTabBarController.rawValue, sender: nil)
                         }

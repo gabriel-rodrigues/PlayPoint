@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
-        
+        self.configurarAparenciaGlobal()
         self.configurarControllerInicial()
         
         return true
@@ -35,6 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func usuarioAutenticadoComFacebook() -> Bool {
         
         return FBSDKAccessToken.current() != nil
+        
+    }
+    
+    func configurarAparenciaGlobal() {
+        
+        
         
     }
     

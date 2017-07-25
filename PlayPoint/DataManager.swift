@@ -1,18 +1,17 @@
 //
-//  CoreDataManager.swift
+//  DataManager.swift
 //  PlayPoint
 //
-//  Created by Gabriel Rodrigues on 22/07/17.
+//  Created by Gabriel Rodrigues on 24/07/17.
 //  Copyright © 2017 Iesb. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-internal class CoreDataManager: NSObject {
+public class DataManager : NSObject {
     
-    
-    internal let container: NSPersistentContainer
+    public let container: NSPersistentContainer
     
     override init() {
         
@@ -28,7 +27,7 @@ internal class CoreDataManager: NSObject {
         super.init()
     }
     
-    internal func save() {
+    func save() {
         
         do {
             if self.container.viewContext.hasChanges {
@@ -39,5 +38,5 @@ internal class CoreDataManager: NSObject {
             print(error.localizedDescription)
         }
     }
-
+    
 }

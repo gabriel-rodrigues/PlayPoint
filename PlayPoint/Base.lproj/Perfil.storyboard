@@ -279,6 +279,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Perfil" id="9dW-P4-Oh4"/>
+                    <connections>
+                        <outlet property="fotoImagemView" destination="j4X-wQ-9ue" id="L5B-TV-7Ci"/>
+                        <outlet property="nomeLabel" destination="w6p-gk-o2O" id="E66-lZ-twk"/>
+                        <outlet property="usuarioDesdeLabel" destination="QR0-HH-pQA" id="AeL-em-soT"/>
+                    </connections>
                 </tableViewController>
                 <tableViewSection headerTitle="Esportes Favoritos" id="Y8P-Se-vCP">
                     <cells>

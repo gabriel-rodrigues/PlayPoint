@@ -11,6 +11,13 @@ import FBSDKLoginKit
 
 class PerfilTableViewController: UITableViewController {
 
+    let manager = UsuarioDataManager()
+    
+    @IBOutlet weak var fotoImagemView: UIImageView!
+    @IBOutlet weak var nomeLabel: UILabel!
+    @IBOutlet weak var usuarioDesdeLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +26,17 @@ class PerfilTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let usuario = manager.recuperarUnicoUsuario()!
+        fotoImagemView.image = UIImage(data: usuario.foto! as Data)
+        fotoImagemView.layer.cornerRadius = fotoImagemView.frame.size.width / 2
+        fotoImagemView.clipsToBounds = true
+        nomeLabel.text       = usuario.nomeCompleto
+        
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        
+        usuarioDesdeLabel.text = dataFormatter.string(from: usuario.dataCadastro! as Date)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,8 +102,29 @@ class PerfilTableViewController: UITableViewController {
     */
     @IBAction func sairAplicativo(_ sender: UIButton) {
         
-        let facebookLoginManager = FBSDKLoginManager()
-        facebookLoginManager.logOut()
+        let itensDeletados = manager.deletar()
+        
+        if itensDeletados {
+            let facebookLoginManager = FBSDKLoginManager()
+            facebookLoginManager.logOut()
+            
+            let controllerLogin: LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppDelegate.shared.loginControllerIdentifier) as! LoginViewController
+            self.present(controllerLogin, animated: true, completion: nil)
+        }
+        else {
+           
+            let alertController = UIAlertController(title: "Problema ao Sair",
+                                                    message: "Não foi possível sair, tente novamente.",
+                                                    preferredStyle: .alert)
+            
+            let actionOk = UIAlertAction(title: "OK",
+                                         style: .default,
+                                         handler: nil)
+            
+            alertController.addAction(actionOk)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
     }
 
 }

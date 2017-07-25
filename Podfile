@@ -9,6 +9,8 @@ target 'PlayPoint' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'DZNEmptyDataSet'
+  pod 'SwiftSpinner'
+  pod 'SwiftyJSON'
 
   target 'PlayPointTests' do
     inherit! :search_paths
