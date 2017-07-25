@@ -7,17 +7,60 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    static var shared = AppDelegate()
+    
+    let tabBarControllerIdentifier = "TabBarController"
+    let loginControllerIdentifier  = "LoginController"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
+        self.configurarAparenciaGlobal()
+        self.configurarControllerInicial()
         
         return true
+    }
+    
+    func usuarioAutenticadoComFacebook() -> Bool {
+        
+        return FBSDKAccessToken.current() != nil
+        
+    }
+    
+    func configurarAparenciaGlobal() {
+        
+        
+        
+    }
+    
+    func configurarControllerInicial() {
+        
+        self.window       = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboad = UIStoryboard(name: "Main", bundle: nil)
+        var controller: UIViewController?
+
+        
+        controller = mainStoryboad.instantiateViewController(withIdentifier: usuarioAutenticadoComFacebook() ? tabBarControllerIdentifier : loginControllerIdentifier);
+        
+        self.window?.rootViewController = controller
+        self.window?.makeKeyAndVisible()
+        
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url as URL!, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -42,6 +85,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func logOut()  {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        UIView.transition(with: self.window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            let mainStoryboad               = UIStoryboard(name: "Main", bundle: nil)
+            self.window?.rootViewController = mainStoryboad.instantiateViewController(withIdentifier: self.loginControllerIdentifier)
+        }, completion: nil)
+        
+    
 
+    }
 }
 

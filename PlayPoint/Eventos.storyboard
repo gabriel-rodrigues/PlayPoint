@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="48Y-jh-3lT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Eventos-->
+        <scene sceneID="UJ4-T2-ayP">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="fkV-Ia-Tnm" customClass="EventosViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Su-Cn-uJv"/>
+                        <viewControllerLayoutGuide type="bottom" id="CTy-hj-tqp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rmb-PK-B8c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-50-ffS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celulaEvento" id="BBM-hI-Y7Z" customClass="EventoTableViewCell" customModule="PlayPoint" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BBM-hI-Y7Z" id="6kU-cp-ST2">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="84.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yMY-lu-lmk">
+                                                    <rect key="frame" x="8" y="8.5" width="326" height="70"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-Jj-hRT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="70" id="HlF-GD-vEi"/>
+                                                                <constraint firstAttribute="width" constant="70" id="igV-un-fGU"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Tv-B0-kQz">
+                                                            <rect key="frame" x="80" y="0.0" width="246" height="63.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbv-9b-YRl">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBx-9B-HcI">
+                                                                    <rect key="frame" x="0.0" y="25.5" width="246" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data e Hora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMb-6D-i32">
+                                                                    <rect key="frame" x="0.0" y="47.5" width="246" height="16"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yMY-lu-lmk" secondAttribute="trailing" id="RGu-DQ-Rt1"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Xmz-Jj-hRT" secondAttribute="leading" id="Sc4-TB-bYy"/>
+                                                <constraint firstItem="yMY-lu-lmk" firstAttribute="top" secondItem="6kU-cp-ST2" secondAttribute="top" constant="8" id="hRe-70-Asi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dataHoraLabel" destination="OMb-6D-i32" id="EqB-I1-XJn"/>
+                                            <outlet property="fotoImavem" destination="Xmz-Jj-hRT" id="WmT-ye-d1P"/>
+                                            <outlet property="localLabel" destination="gBx-9B-HcI" id="gG5-Dp-T6u"/>
+                                            <outlet property="nomeEnvetoLabel" destination="rbv-9b-YRl" id="dC8-7u-JJW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fkV-Ia-Tnm" id="rxs-5c-gGb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SOH-50-ffS" firstAttribute="top" secondItem="5Su-Cn-uJv" secondAttribute="bottom" id="1lD-ps-sq0"/>
+                            <constraint firstItem="CTy-hj-tqp" firstAttribute="top" secondItem="SOH-50-ffS" secondAttribute="bottom" id="HFs-f3-R0e"/>
+                            <constraint firstItem="SOH-50-ffS" firstAttribute="leading" secondItem="Rmb-PK-B8c" secondAttribute="leading" id="OG4-I4-QLK"/>
+                            <constraint firstAttribute="trailing" secondItem="SOH-50-ffS" secondAttribute="trailing" id="Xup-eI-2md"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Eventos" id="pwC-7T-zEr"/>
+                    <connections>
+                        <outlet property="tableView" destination="SOH-50-ffS" id="6hb-Wo-qeX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0QV-ox-6Cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946" y="573"/>
+        </scene>
+        <!--Eventos-->
+        <scene sceneID="wfA-Oh-D7x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48Y-jh-3lT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="Eventos" image="search_evento" id="QBu-bx-4Wg"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s9r-7W-crm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fkV-Ia-Tnm" kind="relationship" relationship="rootViewController" id="yFI-Md-RiR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tf6-dn-hKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2132" y="573"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="search_evento" width="25" height="25"/>
+    </resources>
+</document>
