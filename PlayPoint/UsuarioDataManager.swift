@@ -42,6 +42,8 @@ public class UsuarioDataManager: DataManager {
         return nil
     }
     
+    
+    
     public func deletar() -> Bool  {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
@@ -50,6 +52,7 @@ public class UsuarioDataManager: DataManager {
                 self.container.viewContext.delete(object as! NSManagedObject)
             }
             
+            self.save()
             return true
         }
         

@@ -20,7 +20,7 @@ class EventosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.configurarSearchController()
+        //self.configurarSearchController()
         self.configurarEmptyDataSource()
     }
 

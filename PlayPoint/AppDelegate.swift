@@ -19,12 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let tabBarControllerIdentifier = "TabBarController"
     let loginControllerIdentifier  = "LoginController"
+    let laranjaApp                 = UIColor(hexString: "FF9800")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         
         self.configurarAparenciaGlobal()
         self.configurarControllerInicial()
@@ -42,6 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        UITabBar.appearance().tintColor     = laranjaApp
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.darkGray], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : laranjaApp], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : laranjaApp], for: .highlighted)
+        
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 24.0)!]
+        UINavigationBar.appearance().tintColor    = UIColor.white
+        UINavigationBar.appearance().barTintColor = laranjaApp
+    
+        UITabBar.appearance().isTranslucent        = false
+        UINavigationBar.appearance().isTranslucent = false
     }
     
     func configurarControllerInicial() {
