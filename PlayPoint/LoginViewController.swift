@@ -71,7 +71,6 @@ class LoginViewController: UIViewController {
                 if facebookLoginResult.grantedPermissions != nil {
                     FBSDKGraphRequest(graphPath: "me", parameters: self.parametros).start(completionHandler: { (connection, result, error) in
                         if error == nil {
-                            SwiftSpinner.show("Configurando o primeiro acesso.")
                             
                             let usuarioItem = UsuarioItem(jsonFromLoginFacebook: JSON(result!))
                             self.manager.adicionar(novo: usuarioItem)

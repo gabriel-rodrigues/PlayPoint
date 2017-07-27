@@ -40,6 +40,9 @@
 		D7CD89B41F26DB2C00715C1C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD89B11F26DB2C00715C1C /* DataManager.swift */; };
 		D7F42FC21F26E454003AEEA9 /* UsuarioDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F42FC11F26E454003AEEA9 /* UsuarioDataManager.swift */; };
 		D7F42FC61F26E873003AEEA9 /* UsuarioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F42FC51F26E873003AEEA9 /* UsuarioItem.swift */; };
+		D7F6A2EE1F29779200BECD4B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F6A2ED1F29779200BECD4B /* UIColorExtension.swift */; };
+		D7F6A2EF1F29779200BECD4B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F6A2ED1F29779200BECD4B /* UIColorExtension.swift */; };
+		D7F6A2F01F29779200BECD4B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F6A2ED1F29779200BECD4B /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,7 @@
 		D7CD89B11F26DB2C00715C1C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D7F42FC11F26E454003AEEA9 /* UsuarioDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioDataManager.swift; sourceTree = "<group>"; };
 		D7F42FC51F26E873003AEEA9 /* UsuarioItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioItem.swift; sourceTree = "<group>"; };
+		D7F6A2ED1F29779200BECD4B /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E83B73D147E5A6507ACACCF8 /* Pods-PlayPointUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayPointUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayPointUITests/Pods-PlayPointUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FAE8221C3CE14A4A6557B9AF /* Pods_PlayPointTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayPointTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -251,6 +255,7 @@
 		D76E30F01F26BB47007C9EEE /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				D7F6A2E81F29770000BECD4B /* Extensions */,
 				D76E30F11F26BB58007C9EEE /* Segues.swift */,
 			);
 			name = Commons;
@@ -294,6 +299,14 @@
 			children = (
 			);
 			name = Properties;
+			sourceTree = "<group>";
+		};
+		D7F6A2E81F29770000BECD4B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7F6A2ED1F29779200BECD4B /* UIColorExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		D7F9A3911F23B1CC00D6FD3D /* Frameworks */ = {
@@ -594,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */,
+				D7F6A2EE1F29779200BECD4B /* UIColorExtension.swift in Sources */,
 				7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */,
 				D7CD89AE1F26DA6800715C1C /* UsuarioManager.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
@@ -614,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B62DD3E1EB171810082244F /* PlayPointTests.swift in Sources */,
+				D7F6A2EF1F29779200BECD4B /* UIColorExtension.swift in Sources */,
 				D7CD89B31F26DB2C00715C1C /* DataManager.swift in Sources */,
 				D76E30F31F26BB58007C9EEE /* Segues.swift in Sources */,
 				D74E96FF1F26E1FC002BEA5E /* Model.xcdatamodeld in Sources */,
@@ -631,6 +646,7 @@
 				D76E30F41F26BB58007C9EEE /* Segues.swift in Sources */,
 				D7CD89B01F26DA6800715C1C /* UsuarioManager.swift in Sources */,
 				D74E97001F26E1FC002BEA5E /* Model.xcdatamodeld in Sources */,
+				D7F6A2F01F29779200BECD4B /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

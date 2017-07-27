@@ -16,7 +16,11 @@ class PerfilTableViewController: UITableViewController {
     @IBOutlet weak var fotoImagemView: UIImageView!
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var usuarioDesdeLabel: UILabel!
-    
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var quantidadeFavoritosLabel: UILabel!
+    @IBOutlet weak var quantidadeInteressadosLabel: UILabel!
+    @IBOutlet weak var quantidadeEventosMeusLabel: UILabel!
+    @IBOutlet weak var quantidadeEventosConfirmadosLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +32,26 @@ class PerfilTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         let usuario = manager.recuperarUnicoUsuario()!
-        fotoImagemView.image = UIImage(data: usuario.foto! as Data)
-        fotoImagemView.layer.cornerRadius = fotoImagemView.frame.size.width / 2
-        fotoImagemView.clipsToBounds = true
-        nomeLabel.text       = usuario.nomeCompleto
+        
+        self.fotoImagemView.image = UIImage(data: usuario.foto! as Data)
+        self.fotoImagemView.layer.cornerRadius = fotoImagemView.frame.size.width / 2
+        self.fotoImagemView.clipsToBounds = true
+        self.nomeLabel.text       = usuario.nomeCompleto
+        self.emailLabel.text      = usuario.email
         
         let dataFormatter = DateFormatter()
         dataFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
         
-        usuarioDesdeLabel.text = dataFormatter.string(from: usuario.dataCadastro! as Date)
+        self.usuarioDesdeLabel.text = dataFormatter.string(from: usuario.dataCadastro! as Date)
+        
+        
+        self.arredonarLabelsQuantidades()
+    }
+    
+    func arredonarLabelsQuantidades() {
+        
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,63 +59,41 @@ class PerfilTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 3 && indexPath.row == 0 {
+            self.confirmaLogOut()
+        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func confirmaLogOut()  {
+        
+        let alertController = UIAlertController(title: "Tem certeza que deseja sair?",
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
+        
+        let actionSair = UIAlertAction(title: "Sair",
+                                       style: .destructive) { (alertAction) in
+                                        self.fazerLogOut()
+        }
+        
+        let actionCancelar = UIAlertAction(title: "Cancelar",
+                                           style: .cancel, handler: nil)
+        
+        
+        alertController.addAction(actionSair)
+        alertController.addAction(actionCancelar)
+        
+        
+        let indexPathCelulaSair = IndexPath(row: 0, section: 3)
+        tableView.deselectRow(at: indexPathCelulaSair, animated: true)
+        
+        present(alertController, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func sairAplicativo(_ sender: UIButton) {
+    
+    
+    func fazerLogOut()  {
         
         let itensDeletados = manager.deletar()
         
@@ -112,7 +105,7 @@ class PerfilTableViewController: UITableViewController {
             self.present(controllerLogin, animated: true, completion: nil)
         }
         else {
-           
+            
             let alertController = UIAlertController(title: "Problema ao Sair",
                                                     message: "Não foi possível sair, tente novamente.",
                                                     preferredStyle: .alert)
@@ -124,7 +117,6 @@ class PerfilTableViewController: UITableViewController {
             alertController.addAction(actionOk)
             self.present(alertController, animated: true, completion: nil)
         }
-        
     }
 
 }
