@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Esporte" representedClassName="Esporte" syncable="YES" codeGenerationType="class">
+    <entity name="Esporte" representedClassName="EsporteMO" syncable="YES" codeGenerationType="class">
         <attribute name="descricao" attributeType="String" syncable="YES"/>
-        <attribute name="identificadorImagem" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" syncable="YES"/>
         <relationship name="eventos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="esporte" inverseEntity="Evento" syncable="YES"/>
+        <relationship name="usuarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UsuarioEsportes" inverseName="esporte" inverseEntity="UsuarioEsportes" syncable="YES"/>
     </entity>
-    <entity name="Evento" representedClassName="Evento" syncable="YES" codeGenerationType="class">
+    <entity name="Evento" representedClassName="EventoMO" syncable="YES" codeGenerationType="class">
         <attribute name="dataCriacao" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dataInicio" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="imagem" attributeType="Binary" syncable="YES"/>
@@ -14,24 +15,31 @@
         <relationship name="local" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Local" inverseName="evento" inverseEntity="Local" syncable="YES"/>
         <relationship name="usuarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Usuario" inverseName="eventos" inverseEntity="Usuario" syncable="YES"/>
     </entity>
-    <entity name="Local" representedClassName="Local" syncable="YES" codeGenerationType="class">
+    <entity name="Local" representedClassName="LocalMO" syncable="YES" codeGenerationType="class">
         <attribute name="latitude" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nome" attributeType="String" syncable="YES"/>
         <relationship name="evento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="local" inverseEntity="Evento" syncable="YES"/>
     </entity>
-    <entity name="Usuario" representedClassName="Usuario" syncable="YES" codeGenerationType="class">
+    <entity name="Usuario" representedClassName="UsuarioMO" syncable="YES" codeGenerationType="class">
         <attribute name="dataCadastro" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="email" attributeType="String" syncable="YES"/>
         <attribute name="foto" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="idFacebook" attributeType="String" syncable="YES"/>
         <attribute name="nomeCompleto" attributeType="String" syncable="YES"/>
+        <relationship name="esportes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UsuarioEsportes" inverseName="usuario" inverseEntity="UsuarioEsportes" syncable="YES"/>
         <relationship name="eventos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="usuarios" inverseEntity="Evento" syncable="YES"/>
     </entity>
+    <entity name="UsuarioEsportes" representedClassName="UsuarioEsportesMO" syncable="YES" codeGenerationType="class">
+        <attribute name="isFavorito" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="esporte" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Esporte" inverseName="usuarios" inverseEntity="Esporte" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="esportes" inverseEntity="Usuario" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Esporte" positionX="-803" positionY="-286" width="128" height="90"/>
-        <element name="Evento" positionX="-585" positionY="-63" width="128" height="150"/>
-        <element name="Local" positionX="-387" positionY="198" width="128" height="105"/>
-        <element name="Usuario" positionX="-936" positionY="27" width="128" height="135"/>
+        <element name="Esporte" positionX="-803" positionY="-286" width="128" height="103"/>
+        <element name="Evento" positionX="-585" positionY="-63" width="128" height="148"/>
+        <element name="Local" positionX="-387" positionY="198" width="128" height="103"/>
+        <element name="Usuario" positionX="-1026" positionY="11" width="128" height="148"/>
+        <element name="UsuarioEsportes" positionX="-965" positionY="-162" width="128" height="88"/>
     </elements>
 </model>

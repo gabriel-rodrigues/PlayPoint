@@ -12,6 +12,7 @@ import FBSDKLoginKit
 class PerfilTableViewController: UITableViewController {
 
     let manager = UsuarioDataManager()
+    private var usuario: UsuarioMO!
     
     @IBOutlet weak var fotoImagemView: UIImageView!
     @IBOutlet weak var nomeLabel: UILabel!
@@ -24,20 +25,14 @@ class PerfilTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let usuario = manager.recuperarUnicoUsuario()!
+        self.usuario = manager.recuperarUnicoUsuario()!
         
-        self.fotoImagemView.image = UIImage(data: usuario.foto! as Data)
+        self.fotoImagemView.image = UIImage(data: self.usuario.foto! as Data)
         self.fotoImagemView.layer.cornerRadius = fotoImagemView.frame.size.width / 2
         self.fotoImagemView.clipsToBounds = true
-        self.nomeLabel.text       = usuario.nomeCompleto
-        self.emailLabel.text      = usuario.email
+        self.nomeLabel.text       = self.usuario.nomeCompleto
+        self.emailLabel.text      = self.usuario.email
         
         let dataFormatter = DateFormatter()
         dataFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
@@ -45,15 +40,20 @@ class PerfilTableViewController: UITableViewController {
         self.usuarioDesdeLabel.text = dataFormatter.string(from: usuario.dataCadastro! as Date)
         
         
-        self.arredonarLabelsQuantidades()
+        self.configurarLabelsQuantidadesParaEsportes()
     }
     
-    func arredonarLabelsQuantidades() {
+    func configurarLabelsQuantidadesParaEsportes() {
         
-
+        let quantidadeFavoritos    = self.manager.recuperarQuantidadeEsportes(favorito: true)
+        let quantidadeInteressados = self.manager.recuperarQuantidadeEsportes(favorito: false)
+        
+        self.quantidadeFavoritosLabel.text    = (quantidadeFavoritos > 0) ? "\(quantidadeFavoritos)" : ""
+        self.quantidadeInteressadosLabel.text = (quantidadeInteressados > 0) ? "\(quantidadeInteressados)" : ""
         
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,11 +63,11 @@ class PerfilTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 3 && indexPath.row == 0 {
-            self.confirmaLogOut()
+            self.confirmaLogOut(celulaSair: indexPath)
         }
     }
     
-    func confirmaLogOut()  {
+    func confirmaLogOut(celulaSair indexPath: IndexPath)  {
         
         let alertController = UIAlertController(title: "Tem certeza que deseja sair?",
                                                 message: nil,
@@ -85,11 +85,10 @@ class PerfilTableViewController: UITableViewController {
         alertController.addAction(actionSair)
         alertController.addAction(actionCancelar)
         
+
+        self.tableView.deselectRow(at: indexPath, animated: true)
         
-        let indexPathCelulaSair = IndexPath(row: 0, section: 3)
-        tableView.deselectRow(at: indexPathCelulaSair, animated: true)
-        
-        present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
@@ -116,6 +115,18 @@ class PerfilTableViewController: UITableViewController {
             
             alertController.addAction(actionOk)
             self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let identifier = segue.identifier {
+            if identifier == Segue.showEsportesFavoritos.rawValue {
+                segue.destination.navigationItem.title = "Favoritos"
+            }
+            else {
+                segue.destination.navigationItem.title = "Interessados"
+            }
         }
     }
 

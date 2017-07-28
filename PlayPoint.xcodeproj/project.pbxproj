@@ -23,6 +23,10 @@
 		7B9437301EC3E4FD005C9C0F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B94372E1EC3E4FD005C9C0F /* Model.xcdatamodeld */; };
 		882AE387224FCA67CA6CC893 /* Pods_PlayPointTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE8221C3CE14A4A6557B9AF /* Pods_PlayPointTests.framework */; };
 		B65CCC75FE922784B6811F95 /* Pods_PlayPointUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C460E983B7666AB372AA76A /* Pods_PlayPointUITests.framework */; };
+		D72FC9E21F2ACBCF002BD5F0 /* EsporteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E11F2ACBCF002BD5F0 /* EsporteItem.swift */; };
+		D72FC9E41F2AD161002BD5F0 /* EsportesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */; };
+		D72FC9E61F2AD347002BD5F0 /* DeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E51F2AD347002BD5F0 /* DeleteProtocol.swift */; };
+		D73FC2311F2ACAE0002DC7D7 /* EsporteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */; };
 		D74E96FF1F26E1FC002BEA5E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B94372E1EC3E4FD005C9C0F /* Model.xcdatamodeld */; };
 		D74E97001F26E1FC002BEA5E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B94372E1EC3E4FD005C9C0F /* Model.xcdatamodeld */; };
 		D76E30F21F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
@@ -89,6 +93,12 @@
 		7B94372F1EC3E4FD005C9C0F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9D4A23FC7CF9FFBC32481DED /* Pods-PlayPointTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayPointTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayPointTests/Pods-PlayPointTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7774738523B59B3D3A83316 /* Pods-PlayPointUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayPointUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayPointUITests/Pods-PlayPointUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D72FC9E11F2ACBCF002BD5F0 /* EsporteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsporteItem.swift; sourceTree = "<group>"; };
+		D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsportesTableViewController.swift; sourceTree = "<group>"; };
+		D72FC9E51F2AD347002BD5F0 /* DeleteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteProtocol.swift; sourceTree = "<group>"; };
+		D72FC9E81F2AD5FC002BD5F0 /* ModeloNovo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModeloNovo.xcdatamodel; sourceTree = "<group>"; };
+		D72FC9E91F2AD75F002BD5F0 /* ModeloNovo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModeloNovo.xcdatamodel; sourceTree = "<group>"; };
+		D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsporteDataManager.swift; sourceTree = "<group>"; };
 		D76E30F11F26BB58007C9EEE /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		D76E31021F26C57E007C9EEE /* UsuarioItemTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioItemTest.swift; sourceTree = "<group>"; };
 		D7C0CA861F239BB30023ADDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Evento.storyboard; sourceTree = "<group>"; };
@@ -152,6 +162,7 @@
 				7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */,
 				7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */,
 				7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */,
+				D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				D7F42FC51F26E873003AEEA9 /* UsuarioItem.swift */,
+				D72FC9E11F2ACBCF002BD5F0 /* EsporteItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -252,6 +264,14 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		D72FC9E71F2AD432002BD5F0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D72FC9E51F2AD347002BD5F0 /* DeleteProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		D76E30F01F26BB47007C9EEE /* Commons */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,9 +300,11 @@
 		D7CD89B61F26DC2B00715C1C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D72FC9E71F2AD432002BD5F0 /* Protocols */,
 				D7CD89AD1F26DA6800715C1C /* UsuarioManager.swift */,
 				D7CD89B11F26DB2C00715C1C /* DataManager.swift */,
 				D7F42FC11F26E454003AEEA9 /* UsuarioDataManager.swift */,
+				D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -617,7 +639,11 @@
 				7B56D7251EBBFFA700957A2F /* PerfilTableViewController.swift in Sources */,
 				D76E30F21F26BB58007C9EEE /* Segues.swift in Sources */,
 				7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */,
+				D73FC2311F2ACAE0002DC7D7 /* EsporteDataManager.swift in Sources */,
+				D72FC9E61F2AD347002BD5F0 /* DeleteProtocol.swift in Sources */,
 				D7CD89B21F26DB2C00715C1C /* DataManager.swift in Sources */,
+				D72FC9E41F2AD161002BD5F0 /* EsportesTableViewController.swift in Sources */,
+				D72FC9E21F2ACBCF002BD5F0 /* EsporteItem.swift in Sources */,
 				7B56D7231EBAB6CD00957A2F /* DetalheEventoTableViewController.swift in Sources */,
 				D7F42FC61F26E873003AEEA9 /* UsuarioItem.swift in Sources */,
 			);
@@ -937,6 +963,8 @@
 		7B94372E1EC3E4FD005C9C0F /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D72FC9E91F2AD75F002BD5F0 /* ModeloNovo.xcdatamodel */,
+				D72FC9E81F2AD5FC002BD5F0 /* ModeloNovo.xcdatamodel */,
 				7B94372F1EC3E4FD005C9C0F /* Model.xcdatamodel */,
 			);
 			currentVersion = 7B94372F1EC3E4FD005C9C0F /* Model.xcdatamodel */;

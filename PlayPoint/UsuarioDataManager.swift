@@ -9,13 +9,15 @@
 import UIKit
 import CoreData
 
-public class UsuarioDataManager: DataManager {
+public class UsuarioDataManager: DataManager, DeleteProtocol {
 
-    let entityName = "Usuario"
+    public let entityName       = "Usuario"
+    
+    private let entityMoreToMore = "UsuarioEsportes"
     
     public func adicionar(novo usuarioItem: UsuarioItem) {
         
-        let usuario          = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.container.viewContext) as! Usuario
+        let usuario          = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.container.viewContext) as! UsuarioMO
         usuario.nomeCompleto = usuarioItem.nomeCompleto
         usuario.email        = usuarioItem.email
         usuario.dataCadastro = usuarioItem.dataCadastro! as NSDate
@@ -30,33 +32,29 @@ public class UsuarioDataManager: DataManager {
         
     }
     
-    public func recuperarUnicoUsuario() -> Usuario? {
+    public func recuperarUnicoUsuario() -> UsuarioMO? {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
         if let result    = try? self.container.viewContext.fetch(fetchRequest) {
-            let usuarios = result as! [Usuario]
+            let usuarios = result as! [UsuarioMO]
             return usuarios[0]
         }
         
         return nil
     }
     
-    
-    
-    public func deletar() -> Bool  {
+    public func recuperarQuantidadeEsportes(favorito: Bool) -> Int {
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let fetchRequest       = NSFetchRequest<NSFetchRequestResult>(entityName: entityMoreToMore)
+        fetchRequest.predicate = NSPredicate(format: "isFavorito = %@", argumentArray: [favorito])
+        
         if let result = try? self.container.viewContext.fetch(fetchRequest) {
-            for object in result {
-                self.container.viewContext.delete(object as! NSManagedObject)
-            }
-            
-            self.save()
-            return true
+            return result.count
         }
         
-        return false
+        return 0
     }
+    
     
 }

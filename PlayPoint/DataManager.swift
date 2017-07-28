@@ -27,7 +27,7 @@ public class DataManager : NSObject {
         super.init()
     }
     
-    func save() {
+    public func save() {
         
         do {
             if self.container.viewContext.hasChanges {
@@ -38,5 +38,7 @@ public class DataManager : NSObject {
             print(error.localizedDescription)
         }
     }
+    
+    
     
 }
