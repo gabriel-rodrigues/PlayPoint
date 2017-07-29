@@ -27,6 +27,14 @@ public class DataManager : NSObject {
         super.init()
     }
     
+    /*public func adicionar<T: NSManagedObject>(_ type: T.Type) -> T {
+        
+        let entityName = T.description()
+        let entity     = NSEntityDescription.entity(forEntityName: entityName, in: self.container.viewContext)
+        
+        return T
+    }*/
+    
     public func save() {
         
         do {

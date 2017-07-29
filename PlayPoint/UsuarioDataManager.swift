@@ -46,8 +46,10 @@ public class UsuarioDataManager: DataManager, DeleteProtocol {
     
     public func recuperarQuantidadeEsportes(favorito: Bool) -> Int {
         
-        let fetchRequest       = NSFetchRequest<NSFetchRequestResult>(entityName: entityMoreToMore)
-        fetchRequest.predicate = NSPredicate(format: "isFavorito = %@", argumentArray: [favorito])
+        
+        let fetchRequest        = NSFetchRequest<NSFetchRequestResult>(entityName: entityMoreToMore)
+        fetchRequest.resultType = .countResultType
+        fetchRequest.predicate  = NSPredicate(format: "isFavorito = %@", argumentArray: [favorito])
         
         if let result = try? self.container.viewContext.fetch(fetchRequest) {
             return result.count
