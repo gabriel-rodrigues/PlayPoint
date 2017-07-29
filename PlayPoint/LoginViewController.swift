@@ -44,21 +44,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation */
- 
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        /*if let tabBarController = segue.destination as? UITabBarController {
-            if let navigationController = tabBarController.viewControllers?[0] as? UINavigationController {
-                if let controller = navigationController.topViewController as? EventosViewController {
-
-                }
-            }
-        }*/
-    }
     
     
     @IBAction func entrarComFacebook(_ sender: UIButton) {

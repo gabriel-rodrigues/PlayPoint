@@ -11,9 +11,10 @@ import CoreData
 
 class EsportesTableViewController: UITableViewController {
 
-    private let esporteManager = EsporteDataManager()
-    private var esportes       = [EsporteMO]()
-    private let searchController = UISearchController(searchResultsController: nil)
+    private let esporteManager    = EsporteDataManager()
+    private var esportes          = [EsporteMO]()
+    private var esportesFiltrados = [EsporteMO]()
+    private let searchController  = UISearchController(searchResultsController: nil)
     
     public var isParaFavorito: Bool!
     public var usuario: UsuarioMO!
@@ -81,14 +82,19 @@ class EsportesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if self.searchController.isActive && !searchController.searchBar.text!.isEmpty {
+            return self.esportesFiltrados.count
+        }
+        
         return self.esportes.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celulaEsporte", for: indexPath)
-
-        let esporte = self.esportes[indexPath.row]
+        
+        let cell     = tableView.dequeueReusableCell(withIdentifier: "celulaEsporte", for: indexPath)
+        let esportes = self.searchController.isActive && !searchController.searchBar.text!.isEmpty ? self.esportesFiltrados : self.esportes
+        let esporte  = esportes[indexPath.row]
 
        
         cell.textLabel?.text = esporte.descricao
@@ -104,8 +110,9 @@ class EsportesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell    = tableView.cellForRow(at: indexPath)!
-        let esporte = self.esportes[indexPath.row]
+        let cell     = tableView.cellForRow(at: indexPath)!
+        let esportes = self.searchController.isActive && !searchController.searchBar.text!.isEmpty ? self.esportesFiltrados : self.esportes
+        let esporte  = esportes[indexPath.row]
         
         
         if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
@@ -139,6 +146,16 @@ class EsportesTableViewController: UITableViewController {
         
         return indiceEsporteUsuario
     }
+    
+    func filtrarEsportes(por termo: String) {
+        
+        self.esportesFiltrados = self.esportes.filter({ (esporte) -> Bool in
+            return esporte.descricao!.lowercased().contains(termo.lowercased())
+        })
+        
+        
+        self.tableView.reloadData()
+    }
 }
 
 
@@ -146,6 +163,6 @@ class EsportesTableViewController: UITableViewController {
 extension EsportesTableViewController : UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        self.filtrarEsportes(por: searchController.searchBar.text!)
     }
 }
