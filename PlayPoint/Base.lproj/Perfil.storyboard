@@ -308,12 +308,13 @@
                     <navigationItem key="navigationItem" id="Nz4-sz-2qh">
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="HYS-ZK-1bQ">
                             <connections>
-                                <action selector="salvarEsportes:" destination="jST-uV-Wkl" id="jfY-HD-L3C"/>
+                                <segue destination="jdL-PB-JZv" kind="unwind" unwindAction="unwindSalvarEsportesWithSegue:" id="82y-K3-Ceq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxA-Io-I0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jdL-PB-JZv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3756" y="519"/>
         </scene>

@@ -7,21 +7,54 @@
 //
 
 import UIKit
+import CoreData
 
 class EsportesTableViewController: UITableViewController {
 
     private let esporteManager = EsporteDataManager()
-    private var esportes       = [EsporteItem]()
+    private var esportes       = [EsporteMO]()
     private let searchController = UISearchController(searchResultsController: nil)
     
-    public var usuario: UsuarioMO?
+    public var isParaFavorito: Bool!
+    public var usuario: UsuarioMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         self.configurarSearchController()
-        self.esportes = esporteManager.recuperarTodos()
+        self.filtarEsportesFavoritosOrInteressados()
+    }
+    
+    
+    func filtarEsportesFavoritosOrInteressados() {
+        
+        let esportes = esporteManager.recuperarTodos()
+        
+    
+        let esportesFiltrados = esportes.filter { (esporte) -> Bool in
+            
+            let esportesUsuarios     = self.usuario.esportesUsuarios?.allObjects as! [UsuarioEsporteMO]
+            let contain: [UsuarioEsporteMO]
+            
+            if self.isParaFavorito {
+                
+                contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
+                    return usuarioEsporte.esporte == esporte && !usuarioEsporte.isFavorito
+                })
+            }
+            else {
+                
+                contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
+                    return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito
+                })
+            }
+            
+            return contain.count == 0
+        }
+        
+        
+        self.esportes = esportesFiltrados
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,28 +91,57 @@ class EsportesTableViewController: UITableViewController {
         let esporte = self.esportes[indexPath.row]
 
        
-       cell.textLabel?.text = esporte.descricao
+        cell.textLabel?.text = esporte.descricao
+        let filtrados = self.usuario.esportesUsuarios!.filter({ (item) -> Bool in
+            let usuarioEsporte = item as! UsuarioEsporteMO
+            
+            return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito == isParaFavorito
+        })
         
+        cell.accessoryType = filtrados.count == 1 ? .checkmark : .none
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath)!
+        let cell    = tableView.cellForRow(at: indexPath)!
+        let esporte = self.esportes[indexPath.row]
         
-        if cell.accessoryType == .checkmark {
+        
+        if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
+            
             cell.accessoryType = .none
+            let usuarioEsporte = self.usuario.esportesUsuarios?.allObjects[indice] as! UsuarioEsporteMO
+            self.usuario.removeFromEsportesUsuarios(usuarioEsporte)
         }
         else {
             cell.accessoryType = .checkmark
+            
+            let usuarioEsporteMO        = UsuarioEsporteMO(context: DataManager.shared.context)
+            usuarioEsporteMO.isFavorito = self.isParaFavorito
+            usuarioEsporteMO.esporte    = esporte
+            
+            self.usuario.addToEsportesUsuarios(usuarioEsporteMO)
         }
+    
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
- 
-    @IBAction func salvarEsportes(_ sender: UIBarButtonItem) {
+    
+    
+    func obterIndiceParaFavoritoOrInteressado(esporte: EsporteMO) -> Array<UsuarioEsporteMO>.Index? {
         
+        let esportesUsuarios     = self.usuario.esportesUsuarios!.allObjects as! [UsuarioEsporteMO]
         
+        let indiceEsporteUsuario = esportesUsuarios.index { (usuarioEsporte) -> Bool in
+            return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito == isParaFavorito
+        }
+        
+        return indiceEsporteUsuario
     }
 }
+
+
 
 extension EsportesTableViewController : UISearchResultsUpdating {
     

@@ -34,9 +34,6 @@
 		D7C0CA871F239BB30023ADDA /* Evento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C0CA851F239BB30023ADDA /* Evento.storyboard */; };
 		D7C0CA891F239C080023ADDA /* Eventos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C0CA881F239C080023ADDA /* Eventos.storyboard */; };
 		D7C0CA8C1F239C250023ADDA /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C0CA8A1F239C250023ADDA /* Perfil.storyboard */; };
-		D7CD89AE1F26DA6800715C1C /* UsuarioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD89AD1F26DA6800715C1C /* UsuarioManager.swift */; };
-		D7CD89AF1F26DA6800715C1C /* UsuarioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD89AD1F26DA6800715C1C /* UsuarioManager.swift */; };
-		D7CD89B01F26DA6800715C1C /* UsuarioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD89AD1F26DA6800715C1C /* UsuarioManager.swift */; };
 		D7CD89B21F26DB2C00715C1C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD89B11F26DB2C00715C1C /* DataManager.swift */; };
 		D7CD89B31F26DB2C00715C1C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD89B11F26DB2C00715C1C /* DataManager.swift */; };
 		D7CD89B41F26DB2C00715C1C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CD89B11F26DB2C00715C1C /* DataManager.swift */; };
@@ -100,7 +97,6 @@
 		D7C0CA861F239BB30023ADDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Evento.storyboard; sourceTree = "<group>"; };
 		D7C0CA881F239C080023ADDA /* Eventos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eventos.storyboard; sourceTree = "<group>"; };
 		D7C0CA8B1F239C250023ADDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Perfil.storyboard; sourceTree = "<group>"; };
-		D7CD89AD1F26DA6800715C1C /* UsuarioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioManager.swift; sourceTree = "<group>"; };
 		D7CD89B11F26DB2C00715C1C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D7F42FC11F26E454003AEEA9 /* UsuarioDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioDataManager.swift; sourceTree = "<group>"; };
 		D7F42FC51F26E873003AEEA9 /* UsuarioItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioItem.swift; sourceTree = "<group>"; };
@@ -297,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				D72FC9E71F2AD432002BD5F0 /* Protocols */,
-				D7CD89AD1F26DA6800715C1C /* UsuarioManager.swift */,
 				D7CD89B11F26DB2C00715C1C /* DataManager.swift */,
 				D7F42FC11F26E454003AEEA9 /* UsuarioDataManager.swift */,
 				D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */,
@@ -627,7 +622,6 @@
 				7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */,
 				D7F6A2EE1F29779200BECD4B /* UIColorExtension.swift in Sources */,
 				7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */,
-				D7CD89AE1F26DA6800715C1C /* UsuarioManager.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
 				D79164C51F2C39ED00484563 /* Model.xcdatamodeld in Sources */,
 				D7F42FC21F26E454003AEEA9 /* UsuarioDataManager.swift in Sources */,
@@ -654,7 +648,6 @@
 				D7CD89B31F26DB2C00715C1C /* DataManager.swift in Sources */,
 				D76E30F31F26BB58007C9EEE /* Segues.swift in Sources */,
 				D76E31031F26C57E007C9EEE /* UsuarioItemTest.swift in Sources */,
-				D7CD89AF1F26DA6800715C1C /* UsuarioManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +658,6 @@
 				7B62DD491EB171810082244F /* PlayPointUITests.swift in Sources */,
 				D7CD89B41F26DB2C00715C1C /* DataManager.swift in Sources */,
 				D76E30F41F26BB58007C9EEE /* Segues.swift in Sources */,
-				D7CD89B01F26DA6800715C1C /* UsuarioManager.swift in Sources */,
 				D7F6A2F01F29779200BECD4B /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

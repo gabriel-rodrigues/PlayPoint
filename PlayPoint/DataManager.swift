@@ -11,12 +11,14 @@ import CoreData
 
 public class DataManager : NSObject {
     
-    public let container: NSPersistentContainer
+    private let container = NSPersistentContainer(name: "Model")
+    
+    public static let shared = DataManager()
     
     override init() {
         
-        self.container = NSPersistentContainer(name: "Model")
-        self.container.loadPersistentStores { (description, error) in
+
+        container.loadPersistentStores { (description, error) in
             
             guard error == nil else {
                 print(error?.localizedDescription as Any)
@@ -38,14 +40,21 @@ public class DataManager : NSObject {
     public func save() {
         
         do {
-            if self.container.viewContext.hasChanges {
-                try self.container.viewContext.save()
+            if self.context.hasChanges {
+                try self.context.save()
             }
         }
         catch let error {
             print(error.localizedDescription)
         }
     }
+    
+    
+    public var context: NSManagedObjectContext {
+        return self.container.viewContext
+    }
+    
+    
     
     
     

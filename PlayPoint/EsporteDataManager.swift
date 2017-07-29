@@ -9,31 +9,44 @@
 import Foundation
 import CoreData
 
-public class EsporteDataManager: DataManager, DeleteProtocol {
+public class EsporteDataManager {
     
     public let entityName = "Esporte"
     
-    public func recuperarTodos() -> [EsporteItem] {
+    public func recuperarTodos() -> [EsporteMO] {
         
-        var esportesItem = Array<EsporteItem>()
+        var esportes = Array<EsporteMO>()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "descricao", ascending: true)]
         
         
-        if let result = try? self.container.viewContext.fetch(fetchRequest) {
-            for esporte in result {
-                let esporteItem = EsporteItem(esporte: esporte as! EsporteMO)
-                esportesItem.append(esporteItem)
-            }
+        if let result = try? DataManager.shared.context.fetch(fetchRequest) {
+            esportes = result as! [EsporteMO]
         }
         
-        return esportesItem
+        return esportes
     }
+    
+    
+    private func esportesInseridos() -> Bool {
+        
+        let fetchRequest        = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.resultType = .countResultType
+        
+        if let result = try? DataManager.shared.context.fetch(fetchRequest) {
+            let quantidade = result[0] as! Int
+            
+            return quantidade > 0
+        }
+        
+        return false
+    }
+
     
     
     public func seedEsportes() {
         
-        if self.recuperarTodos().count == 0 {
+        if !self.esportesInseridos() {
             let esportes = [
                 "Atletismo",
                 "Badminton",
@@ -68,12 +81,11 @@ public class EsporteDataManager: DataManager, DeleteProtocol {
             ]
             
             for esporte in esportes {
-               let esporteMO        = NSEntityDescription.insertNewObject(forEntityName: self.entityName, into: self.container.viewContext) as! EsporteMO
+               let esporteMO        = NSEntityDescription.insertNewObject(forEntityName: self.entityName, into: DataManager.shared.context) as! EsporteMO
                 esporteMO.descricao = esporte
-                esporteMO.uuid      = UUID().uuidString
             }
             
-            self.save()
+            DataManager.shared.save()
         }
         
     }

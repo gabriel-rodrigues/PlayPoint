@@ -11,12 +11,10 @@ import Foundation
 
 public struct EsporteItem {
     
-    public var uuid: String
     public var descricao: String
     
     public init (esporte mo: EsporteMO) {
         
-        self.uuid      = mo.uuid!
         self.descricao = mo.descricao!
     }
 }

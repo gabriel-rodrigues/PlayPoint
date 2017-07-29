@@ -11,7 +11,7 @@ import FBSDKLoginKit
 
 class PerfilTableViewController: UITableViewController {
 
-    let manager = UsuarioDataManager()
+    let manager        = UsuarioDataManager()
     private var usuario: UsuarioMO!
     
     @IBOutlet weak var fotoImagemView: UIImageView!
@@ -45,14 +45,30 @@ class PerfilTableViewController: UITableViewController {
     
     func configurarLabelsQuantidadesParaEsportes() {
         
-        let quantidadeFavoritos    = self.manager.recuperarQuantidadeEsportes(favorito: true)
-        let quantidadeInteressados = self.manager.recuperarQuantidadeEsportes(favorito: false)
+        
+        let quantidadeFavoritos    = recuperarQuantidade(isFavorito: true)
+        let quantidadeInteressados = recuperarQuantidade(isFavorito: false)
         
         self.quantidadeFavoritosLabel.text    = (quantidadeFavoritos > 0) ? "\(quantidadeFavoritos)" : ""
         self.quantidadeInteressadosLabel.text = (quantidadeInteressados > 0) ? "\(quantidadeInteressados)" : ""
         
     }
 
+    func recuperarQuantidade(isFavorito: Bool) -> Int {
+        
+        let itensFiltrados     = self.usuario.esportesUsuarios?.filter({ (item) -> Bool in
+            let usuarioEsporte = item as! UsuarioEsporteMO
+            
+            return usuarioEsporte.isFavorito == isFavorito
+        })
+        
+        guard let itens = itensFiltrados else {
+            return 0
+        }
+        
+        return itens.count
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,7 +110,7 @@ class PerfilTableViewController: UITableViewController {
     
     func fazerLogOut()  {
         
-        let itensDeletados = manager.deletar()
+        let itensDeletados =  manager.deletar()
         
         if itensDeletados {
             let facebookLoginManager = FBSDKLoginManager()
@@ -121,13 +137,32 @@ class PerfilTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let identifier = segue.identifier {
+            var isFavorito = false
+            
             if identifier == Segue.showEsportesFavoritos.rawValue {
                 segue.destination.navigationItem.title = "Favoritos"
+                isFavorito = true
             }
             else {
                 segue.destination.navigationItem.title = "Interessados"
             }
+            
+            let controller            = segue.destination as! EsportesTableViewController
+            controller.usuario        = self.usuario
+            controller.isParaFavorito = isFavorito
         }
+    }
+    
+    
+    @IBAction func unwindSalvarEsportes(segue: UIStoryboardSegue) {
+    
+        DataManager.shared.save()
+        self.configurarLabelsQuantidadesParaEsportes()
+        /*guard let escolhidos = controller.esportesEscolhidos else {
+            return
+        }*/
+        
+        //self.manager.adicionar(esporte: escolhidos)
     }
 
 }

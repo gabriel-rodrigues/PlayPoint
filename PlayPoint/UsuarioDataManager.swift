@@ -9,15 +9,15 @@
 import UIKit
 import CoreData
 
-public class UsuarioDataManager: DataManager, DeleteProtocol {
+public class UsuarioDataManager : DeleteProtocol {
 
-    public let entityName       = "Usuario"
+    public let entityName = "Usuario"
+    public let entityEsporte = "Esporte"
     
-    private let entityMoreToMore = "UsuarioEsportes"
     
     public func adicionar(novo usuarioItem: UsuarioItem) {
         
-        let usuario          = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.container.viewContext) as! UsuarioMO
+        let usuario          = NSEntityDescription.insertNewObject(forEntityName: entityName, into: DataManager.shared.context) as! UsuarioMO
         usuario.nomeCompleto = usuarioItem.nomeCompleto
         usuario.email        = usuarioItem.email
         usuario.dataCadastro = usuarioItem.dataCadastro! as NSDate
@@ -28,7 +28,7 @@ public class UsuarioDataManager: DataManager, DeleteProtocol {
         }
         
         
-        self.save()
+        DataManager.shared.save()
         
     }
     
@@ -36,27 +36,12 @@ public class UsuarioDataManager: DataManager, DeleteProtocol {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
-        if let result    = try? self.container.viewContext.fetch(fetchRequest) {
+        if let result    = try? DataManager.shared.context.fetch(fetchRequest) {
             let usuarios = result as! [UsuarioMO]
             return usuarios[0]
         }
         
         return nil
     }
-    
-    public func recuperarQuantidadeEsportes(favorito: Bool) -> Int {
-        
-        
-        let fetchRequest        = NSFetchRequest<NSFetchRequestResult>(entityName: entityMoreToMore)
-        fetchRequest.resultType = .countResultType
-        fetchRequest.predicate  = NSPredicate(format: "isFavorito = %@", argumentArray: [favorito])
-        
-        if let result = try? self.container.viewContext.fetch(fetchRequest) {
-            return result.count
-        }
-        
-        return 0
-    }
-    
     
 }

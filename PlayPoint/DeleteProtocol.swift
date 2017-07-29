@@ -12,10 +12,6 @@ import CoreData
 public protocol DeleteProtocol {
     
     var entityName: String { get }
-    var container: NSPersistentContainer { get }
-    
-    
-    func save()
 }
 
 
@@ -23,13 +19,11 @@ extension DeleteProtocol {
     
     public func deletar() -> Bool  {
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        if let result = try? self.container.viewContext.fetch(fetchRequest) {
-            for object in result {
-                self.container.viewContext.delete(object as! NSManagedObject)
-            }
-            
-            self.save()
+        let fetch   = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        
+        if let _ = try? DataManager.shared.context.execute(request) {
+            DataManager.shared.save()
             return true
         }
         
