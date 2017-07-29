@@ -9,13 +9,15 @@
 import UIKit
 import CoreData
 
-public class UsuarioDataManager: DataManager {
+public class UsuarioDataManager : DeleteProtocol {
 
-    let entityName = "Usuario"
+    public let entityName = "Usuario"
+    public let entityEsporte = "Esporte"
+    
     
     public func adicionar(novo usuarioItem: UsuarioItem) {
         
-        let usuario          = NSEntityDescription.insertNewObject(forEntityName: entityName, into: self.container.viewContext) as! Usuario
+        let usuario          = NSEntityDescription.insertNewObject(forEntityName: entityName, into: DataManager.shared.context) as! UsuarioMO
         usuario.nomeCompleto = usuarioItem.nomeCompleto
         usuario.email        = usuarioItem.email
         usuario.dataCadastro = usuarioItem.dataCadastro! as NSDate
@@ -26,37 +28,20 @@ public class UsuarioDataManager: DataManager {
         }
         
         
-        self.save()
+        DataManager.shared.save()
         
     }
     
-    public func recuperarUnicoUsuario() -> Usuario? {
+    public func recuperarUnicoUsuario() -> UsuarioMO? {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
-        if let result    = try? self.container.viewContext.fetch(fetchRequest) {
-            let usuarios = result as! [Usuario]
+        if let result    = try? DataManager.shared.context.fetch(fetchRequest) {
+            let usuarios = result as! [UsuarioMO]
             return usuarios[0]
         }
         
         return nil
-    }
-    
-    
-    
-    public func deletar() -> Bool  {
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        if let result = try? self.container.viewContext.fetch(fetchRequest) {
-            for object in result {
-                self.container.viewContext.delete(object as! NSManagedObject)
-            }
-            
-            self.save()
-            return true
-        }
-        
-        return false
     }
     
 }

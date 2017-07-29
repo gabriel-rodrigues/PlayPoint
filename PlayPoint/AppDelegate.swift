@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        self.configurarEsportes()
         self.configurarAparenciaGlobal()
         self.configurarControllerInicial()
         
@@ -36,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return FBSDKAccessToken.current() != nil
         
+    }
+    
+    func configurarEsportes() {
+        
+        let esporteManager = EsporteDataManager()
+        esporteManager.seedEsportes()
     }
     
     func configurarAparenciaGlobal() {
@@ -54,8 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor    = UIColor.white
         UINavigationBar.appearance().barTintColor = laranjaApp
     
-        UITabBar.appearance().isTranslucent        = false
-        UINavigationBar.appearance().isTranslucent = false
+        UITabBar.appearance().isTranslucent = false
     }
     
     func configurarControllerInicial() {

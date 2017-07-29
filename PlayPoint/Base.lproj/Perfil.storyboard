@@ -109,6 +109,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jST-uV-Wkl" kind="show" identifier="showEsportesFavoritos" id="r8y-lM-0n5"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="pxW-ab-Hfh" detailTextLabel="zlc-Hy-iKC" imageView="jHn-LV-20i" style="IBUITableViewCellStyleValue1" id="phu-Cf-fFE">
                                         <rect key="frame" x="0.0" y="220" width="375" height="44"/>
@@ -143,6 +146,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jST-uV-Wkl" kind="show" identifier="showEsportesInteressados" id="5fo-FL-7An"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -276,6 +282,42 @@
             </objects>
             <point key="canvasLocation" x="2700" y="519"/>
         </scene>
+        <!--Esportes Table View Controller-->
+        <scene sceneID="Qcn-Lb-bmS">
+            <objects>
+                <tableViewController id="jST-uV-Wkl" customClass="EsportesTableViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CRc-c7-57X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaEsporte" id="NH3-Bl-7iu">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NH3-Bl-7iu" id="Adc-nr-9vs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jST-uV-Wkl" id="HLZ-KT-vQe"/>
+                            <outlet property="delegate" destination="jST-uV-Wkl" id="8ky-vf-20F"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Nz4-sz-2qh">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="HYS-ZK-1bQ">
+                            <connections>
+                                <segue destination="jdL-PB-JZv" kind="unwind" unwindAction="unwindSalvarEsportesWithSegue:" id="82y-K3-Ceq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxA-Io-I0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jdL-PB-JZv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3756" y="519"/>
+        </scene>
         <!--Perfil-->
         <scene sceneID="4GM-2M-a7s">
             <objects>
@@ -304,4 +346,7 @@
         <image name="meus" width="25" height="25"/>
         <image name="perfil" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="r8y-lM-0n5"/>
+    </inferredMetricsTieBreakers>
 </document>
