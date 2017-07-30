@@ -11,6 +11,11 @@ import CoreData
 
 class EsportesTableViewController: UITableViewController {
 
+    
+    @IBOutlet weak var salvarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var prontoButtonItem: UIBarButtonItem!
+    
+    
     private let esporteManager    = EsporteDataManager()
     private var esportes          = [EsporteMO]()
     private var esportesFiltrados = [EsporteMO]()
@@ -23,17 +28,29 @@ class EsportesTableViewController: UITableViewController {
         super.viewDidLoad()
 
         
+        self.configurarButtonsCorretamente()
         self.configurarSearchController()
         self.filtarEsportesFavoritosOrInteressados()
     }
     
+    
+    func configurarButtonsCorretamente() {
+        
+        guard let _ = isParaFavorito else {
+            salvarButtonItem.isEnabled = false
+            salvarButtonItem.tintColor = UIColor.clear
+            
+            return
+        }
+        
+    }
     
     func filtarEsportesFavoritosOrInteressados() {
         
         let esportes = esporteManager.recuperarTodos()
         
     
-        let esportesFiltrados = esportes.filter { (esporte) -> Bool in
+        /*let esportesFiltrados = esportes.filter { (esporte) -> Bool in
             
             let esportesUsuarios     = self.usuario.esportesUsuarios?.allObjects as! [UsuarioEsporteMO]
             let contain: [UsuarioEsporteMO]
@@ -55,7 +72,8 @@ class EsportesTableViewController: UITableViewController {
         }
         
         
-        self.esportes = esportesFiltrados
+        self.esportes = esportesFiltrados*/
+        self.esportes = esportes
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,10 +83,12 @@ class EsportesTableViewController: UITableViewController {
 
     func configurarSearchController() {
         
+        self.searchController.delegate = self
         self.searchController.searchResultsUpdater             = self
         self.searchController.dimsBackgroundDuringPresentation = false
-        self.searchController.searchBar.placeholder = "Buscar"
+        self.searchController.searchBar.placeholder = "Buscar por esportes"
         self.searchController.searchBar.setValue("Cancelar", forKey:"_cancelButtonText")
+        self.searchController.searchBar.searchBarStyle = .minimal
         self.definesPresentationContext = true
         self.tableView.tableHeaderView  = searchController.searchBar
     }
@@ -98,13 +118,13 @@ class EsportesTableViewController: UITableViewController {
 
        
         cell.textLabel?.text = esporte.descricao
-        let filtrados = self.usuario.esportesUsuarios!.filter({ (item) -> Bool in
+        /*let filtrados = self.usuario.esportesUsuarios!.filter({ (item) -> Bool in
             let usuarioEsporte = item as! UsuarioEsporteMO
             
             return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito == isParaFavorito
         })
         
-        cell.accessoryType = filtrados.count == 1 ? .checkmark : .none
+        cell.accessoryType = filtrados.count == 1 ? .checkmark : .none*/
         return cell
     }
     
@@ -115,7 +135,7 @@ class EsportesTableViewController: UITableViewController {
         let esporte  = esportes[indexPath.row]
         
         
-        if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
+        /*if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
             
             cell.accessoryType = .none
             let usuarioEsporte = self.usuario.esportesUsuarios?.allObjects[indice] as! UsuarioEsporteMO
@@ -129,8 +149,10 @@ class EsportesTableViewController: UITableViewController {
             usuarioEsporteMO.esporte    = esporte
             
             self.usuario.addToEsportesUsuarios(usuarioEsporteMO)
-        }
+        }*/
     
+        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -158,7 +180,18 @@ class EsportesTableViewController: UITableViewController {
     }
 }
 
-
+extension EsportesTableViewController : UISearchControllerDelegate {
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.searchBarStyle = .default
+        searchController.searchBar.barTintColor   = AppDelegate.shared.laranjaApp
+        searchController.searchBar.tintColor      = UIColor.white
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.searchBarStyle = .minimal
+    }
+}
 
 extension EsportesTableViewController : UISearchResultsUpdating {
     

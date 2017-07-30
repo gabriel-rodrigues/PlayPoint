@@ -95,7 +95,14 @@
                             <constraint firstAttribute="trailing" secondItem="SOH-50-ffS" secondAttribute="trailing" id="Xup-eI-2md"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Eventos" id="pwC-7T-zEr"/>
+                    <navigationItem key="navigationItem" title="Eventos" id="pwC-7T-zEr">
+                        <barButtonItem key="rightBarButtonItem" image="novo_evento" id="sJJ-D7-739">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="9GQ-Sn-ZvY" kind="presentation" identifier="showNovoEvento" id="5u8-9I-5ta"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="SOH-50-ffS" id="6hb-Wo-qeX"/>
                     </connections>
@@ -104,11 +111,19 @@
             </objects>
             <point key="canvasLocation" x="-946" y="573"/>
         </scene>
+        <!--Evento-->
+        <scene sceneID="ZqH-6X-GMh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Evento" id="9GQ-Sn-ZvY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIj-AG-gji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="300"/>
+        </scene>
         <!--Eventos-->
         <scene sceneID="wfA-Oh-D7x">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48Y-jh-3lT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Eventos" image="search_evento" id="QBu-bx-4Wg"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Eventos" image="novo_evento" id="QBu-bx-4Wg"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s9r-7W-crm">
@@ -126,6 +141,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="search_evento" width="25" height="25"/>
+        <image name="novo_evento" width="25" height="25"/>
     </resources>
 </document>

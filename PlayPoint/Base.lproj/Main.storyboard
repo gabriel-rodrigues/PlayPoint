@@ -21,8 +21,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="iyU-Q9-6zG" kind="relationship" relationship="viewControllers" id="8uJ-0I-j2m"/>
-                        <segue destination="lPC-W6-JrR" kind="relationship" relationship="viewControllers" id="sOL-88-PpG"/>
-                        <segue destination="6qN-Qv-udL" kind="relationship" relationship="viewControllers" id="N4g-l4-pgO"/>
+                        <segue destination="vCo-2I-O6r" kind="relationship" relationship="viewControllers" id="gAB-ew-wDx"/>
+                        <segue destination="6qN-Qv-udL" kind="relationship" relationship="viewControllers" id="byY-mQ-skR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igg-wj-SKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,16 +104,6 @@
             </objects>
             <point key="canvasLocation" x="-1335" y="219"/>
         </scene>
-        <!--Evento-->
-        <scene sceneID="za3-UR-ayP">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Evento" id="lPC-W6-JrR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="eQa-ba-YzT"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pbb-3G-dwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-994" y="219"/>
-        </scene>
         <!--Perfil-->
         <scene sceneID="ydf-iM-EwN">
             <objects>
@@ -123,6 +113,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uE0-dh-bFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-671" y="219"/>
+        </scene>
+        <!--Buscar-->
+        <scene sceneID="h1s-R8-bzy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Buscar" id="vCo-2I-O6r" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Huc-ON-Qzl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xB0-Vf-Ot2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-994" y="219"/>
         </scene>
     </scenes>
     <resources>

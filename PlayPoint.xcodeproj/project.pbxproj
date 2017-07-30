@@ -11,7 +11,6 @@
 		7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D71B1EBA8AEB00957A2F /* EventosViewController.swift */; };
 		7B56D71F1EBA903500957A2F /* EventoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D71E1EBA903500957A2F /* EventoTableViewCell.swift */; };
 		7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D7201EBAA9C700957A2F /* NovoEventoTableViewController.swift */; };
-		7B56D7231EBAB6CD00957A2F /* DetalheEventoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */; };
 		7B56D7251EBBFFA700957A2F /* PerfilTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */; };
 		7B62DD291EB171810082244F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62DD281EB171810082244F /* AppDelegate.swift */; };
 		7B62DD2E1EB171810082244F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B62DD2C1EB171810082244F /* Main.storyboard */; };
@@ -26,6 +25,13 @@
 		D72FC9E41F2AD161002BD5F0 /* EsportesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */; };
 		D72FC9E61F2AD347002BD5F0 /* DeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E51F2AD347002BD5F0 /* DeleteProtocol.swift */; };
 		D73FC2311F2ACAE0002DC7D7 /* EsporteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */; };
+		D744174C1F2E32D700252BF3 /* Esportes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D744174A1F2E32D700252BF3 /* Esportes.storyboard */; };
+		D744174F1F2E3D6800252BF3 /* Buscar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D744174D1F2E3D6800252BF3 /* Buscar.storyboard */; };
+		D74417511F2E41B500252BF3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74417501F2E41B500252BF3 /* MapKit.framework */; };
+		D74417541F2E436A00252BF3 /* TogglePickerCustomProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74417531F2E436A00252BF3 /* TogglePickerCustomProtocol.swift */; };
+		D74417561F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */; };
+		D74417571F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */; };
+		D74417581F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */; };
 		D76E30F21F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
 		D76E30F31F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
 		D76E30F41F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
@@ -70,7 +76,6 @@
 		7B56D71B1EBA8AEB00957A2F /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		7B56D71E1EBA903500957A2F /* EventoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoTableViewCell.swift; sourceTree = "<group>"; };
 		7B56D7201EBAA9C700957A2F /* NovoEventoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovoEventoTableViewController.swift; sourceTree = "<group>"; };
-		7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheEventoTableViewController.swift; sourceTree = "<group>"; };
 		7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilTableViewController.swift; sourceTree = "<group>"; };
 		7B62DD251EB171810082244F /* PlayPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B62DD281EB171810082244F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +96,11 @@
 		D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsportesTableViewController.swift; sourceTree = "<group>"; };
 		D72FC9E51F2AD347002BD5F0 /* DeleteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteProtocol.swift; sourceTree = "<group>"; };
 		D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsporteDataManager.swift; sourceTree = "<group>"; };
+		D744174B1F2E32D700252BF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Esportes.storyboard; sourceTree = "<group>"; };
+		D744174E1F2E3D6800252BF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Buscar.storyboard; sourceTree = "<group>"; };
+		D74417501F2E41B500252BF3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D74417531F2E436A00252BF3 /* TogglePickerCustomProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogglePickerCustomProtocol.swift; sourceTree = "<group>"; };
+		D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscaEventoViewController.swift; sourceTree = "<group>"; };
 		D76E30F11F26BB58007C9EEE /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		D76E31021F26C57E007C9EEE /* UsuarioItemTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioItemTest.swift; sourceTree = "<group>"; };
 		D79164C41F2C39ED00484563 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -110,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74417511F2E41B500252BF3 /* MapKit.framework in Frameworks */,
 				4D4A76763C4F1797D59D2082 /* Pods_PlayPoint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,10 +162,10 @@
 			children = (
 				7B56D71B1EBA8AEB00957A2F /* EventosViewController.swift */,
 				7B56D7201EBAA9C700957A2F /* NovoEventoTableViewController.swift */,
-				7B56D7221EBAB6CD00957A2F /* DetalheEventoTableViewController.swift */,
 				7B56D7241EBBFFA700957A2F /* PerfilTableViewController.swift */,
 				7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */,
 				D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */,
+				D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -174,7 +185,9 @@
 				7B56D71D1EBA901700957A2F /* Classes */,
 				7B62DD311EB171810082244F /* LaunchScreen.storyboard */,
 				7B62DD2C1EB171810082244F /* Main.storyboard */,
+				D744174D1F2E3D6800252BF3 /* Buscar.storyboard */,
 				D7C0CA8A1F239C250023ADDA /* Perfil.storyboard */,
+				D744174A1F2E32D700252BF3 /* Esportes.storyboard */,
 				D7C0CA881F239C080023ADDA /* Eventos.storyboard */,
 				D7C0CA851F239BB30023ADDA /* Evento.storyboard */,
 			);
@@ -264,9 +277,18 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		D74417521F2E434900252BF3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D74417531F2E436A00252BF3 /* TogglePickerCustomProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		D76E30F01F26BB47007C9EEE /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				D74417521F2E434900252BF3 /* Protocols */,
 				D7F6A2E81F29770000BECD4B /* Extensions */,
 				D76E30F11F26BB58007C9EEE /* Segues.swift */,
 			);
@@ -325,6 +347,7 @@
 		D7F9A3911F23B1CC00D6FD3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D74417501F2E41B500252BF3 /* MapKit.framework */,
 				1801F82F7A4F672DE0BF60EC /* Pods_PlayPoint.framework */,
 				FAE8221C3CE14A4A6557B9AF /* Pods_PlayPointTests.framework */,
 				6C460E983B7666AB372AA76A /* Pods_PlayPointUITests.framework */,
@@ -411,6 +434,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 9737X87RWT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					7B62DD381EB171810082244F = {
 						CreatedOnToolsVersion = 8.3;
@@ -451,11 +479,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D744174F1F2E3D6800252BF3 /* Buscar.storyboard in Resources */,
 				7B62DD331EB171810082244F /* LaunchScreen.storyboard in Resources */,
 				D7C0CA871F239BB30023ADDA /* Evento.storyboard in Resources */,
 				D7C0CA891F239C080023ADDA /* Eventos.storyboard in Resources */,
 				7B62DD301EB171810082244F /* Assets.xcassets in Resources */,
 				D7C0CA8C1F239C250023ADDA /* Perfil.storyboard in Resources */,
+				D744174C1F2E32D700252BF3 /* Esportes.storyboard in Resources */,
 				7B62DD2E1EB171810082244F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,8 +652,10 @@
 				7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */,
 				D7F6A2EE1F29779200BECD4B /* UIColorExtension.swift in Sources */,
 				7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */,
+				D74417541F2E436A00252BF3 /* TogglePickerCustomProtocol.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
 				D79164C51F2C39ED00484563 /* Model.xcdatamodeld in Sources */,
+				D74417561F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */,
 				D7F42FC21F26E454003AEEA9 /* UsuarioDataManager.swift in Sources */,
 				7B56D71C1EBA8AEB00957A2F /* EventosViewController.swift in Sources */,
 				7B56D7251EBBFFA700957A2F /* PerfilTableViewController.swift in Sources */,
@@ -634,7 +666,6 @@
 				D7CD89B21F26DB2C00715C1C /* DataManager.swift in Sources */,
 				D72FC9E41F2AD161002BD5F0 /* EsportesTableViewController.swift in Sources */,
 				D72FC9E21F2ACBCF002BD5F0 /* EsporteItem.swift in Sources */,
-				7B56D7231EBAB6CD00957A2F /* DetalheEventoTableViewController.swift in Sources */,
 				D7F42FC61F26E873003AEEA9 /* UsuarioItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +674,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74417571F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */,
 				7B62DD3E1EB171810082244F /* PlayPointTests.swift in Sources */,
 				D7F6A2EF1F29779200BECD4B /* UIColorExtension.swift in Sources */,
 				D7CD89B31F26DB2C00715C1C /* DataManager.swift in Sources */,
@@ -658,6 +690,7 @@
 				7B62DD491EB171810082244F /* PlayPointUITests.swift in Sources */,
 				D7CD89B41F26DB2C00715C1C /* DataManager.swift in Sources */,
 				D76E30F41F26BB58007C9EEE /* Segues.swift in Sources */,
+				D74417581F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */,
 				D7F6A2F01F29779200BECD4B /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +725,22 @@
 				7B62DD321EB171810082244F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D744174A1F2E32D700252BF3 /* Esportes.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D744174B1F2E32D700252BF3 /* Base */,
+			);
+			name = Esportes.storyboard;
+			sourceTree = "<group>";
+		};
+		D744174D1F2E3D6800252BF3 /* Buscar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D744174E1F2E3D6800252BF3 /* Base */,
+			);
+			name = Buscar.storyboard;
 			sourceTree = "<group>";
 		};
 		D7C0CA851F239BB30023ADDA /* Evento.storyboard */ = {
