@@ -24,6 +24,9 @@
 		D72FC9E21F2ACBCF002BD5F0 /* EsporteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E11F2ACBCF002BD5F0 /* EsporteItem.swift */; };
 		D72FC9E41F2AD161002BD5F0 /* EsportesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */; };
 		D72FC9E61F2AD347002BD5F0 /* DeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FC9E51F2AD347002BD5F0 /* DeleteProtocol.swift */; };
+		D73E03031F2E554500D6FA7C /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E03021F2E554500D6FA7C /* LocalViewController.swift */; };
+		D73E03051F2E89E000D6FA7C /* SelecionaEsporteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E03041F2E89E000D6FA7C /* SelecionaEsporteDelegate.swift */; };
+		D73E03071F2EA15600D6FA7C /* LocalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E03061F2EA15600D6FA7C /* LocalItem.swift */; };
 		D73FC2311F2ACAE0002DC7D7 /* EsporteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */; };
 		D744174C1F2E32D700252BF3 /* Esportes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D744174A1F2E32D700252BF3 /* Esportes.storyboard */; };
 		D744174F1F2E3D6800252BF3 /* Buscar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D744174D1F2E3D6800252BF3 /* Buscar.storyboard */; };
@@ -95,6 +98,9 @@
 		D72FC9E11F2ACBCF002BD5F0 /* EsporteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsporteItem.swift; sourceTree = "<group>"; };
 		D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsportesTableViewController.swift; sourceTree = "<group>"; };
 		D72FC9E51F2AD347002BD5F0 /* DeleteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteProtocol.swift; sourceTree = "<group>"; };
+		D73E03021F2E554500D6FA7C /* LocalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
+		D73E03041F2E89E000D6FA7C /* SelecionaEsporteDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelecionaEsporteDelegate.swift; sourceTree = "<group>"; };
+		D73E03061F2EA15600D6FA7C /* LocalItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalItem.swift; sourceTree = "<group>"; };
 		D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EsporteDataManager.swift; sourceTree = "<group>"; };
 		D744174B1F2E32D700252BF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Esportes.storyboard; sourceTree = "<group>"; };
 		D744174E1F2E3D6800252BF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Buscar.storyboard; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 				7B7A76F51EBFDEB100894B09 /* LoginViewController.swift */,
 				D72FC9E31F2AD161002BD5F0 /* EsportesTableViewController.swift */,
 				D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */,
+				D73E03021F2E554500D6FA7C /* LocalViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 			children = (
 				D7F42FC51F26E873003AEEA9 /* UsuarioItem.swift */,
 				D72FC9E11F2ACBCF002BD5F0 /* EsporteItem.swift */,
+				D73E03061F2EA15600D6FA7C /* LocalItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -281,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				D74417531F2E436A00252BF3 /* TogglePickerCustomProtocol.swift */,
+				D73E03041F2E89E000D6FA7C /* SelecionaEsporteDelegate.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -652,7 +661,9 @@
 				7B7A76F61EBFDEB100894B09 /* LoginViewController.swift in Sources */,
 				D7F6A2EE1F29779200BECD4B /* UIColorExtension.swift in Sources */,
 				7B56D7211EBAA9C700957A2F /* NovoEventoTableViewController.swift in Sources */,
+				D73E03071F2EA15600D6FA7C /* LocalItem.swift in Sources */,
 				D74417541F2E436A00252BF3 /* TogglePickerCustomProtocol.swift in Sources */,
+				D73E03051F2E89E000D6FA7C /* SelecionaEsporteDelegate.swift in Sources */,
 				7B62DD291EB171810082244F /* AppDelegate.swift in Sources */,
 				D79164C51F2C39ED00484563 /* Model.xcdatamodeld in Sources */,
 				D74417561F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */,
@@ -667,6 +678,7 @@
 				D72FC9E41F2AD161002BD5F0 /* EsportesTableViewController.swift in Sources */,
 				D72FC9E21F2ACBCF002BD5F0 /* EsporteItem.swift in Sources */,
 				D7F42FC61F26E873003AEEA9 /* UsuarioItem.swift in Sources */,
+				D73E03031F2E554500D6FA7C /* LocalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

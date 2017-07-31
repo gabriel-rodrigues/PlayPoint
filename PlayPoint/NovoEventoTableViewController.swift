@@ -21,6 +21,10 @@ class NovoEventoTableViewController: UITableViewController {
     private let heightCelulaCampos = 72
     private let heightCelulaPicker = 216
     private let heightCelulaHidden = 0.0
+
+    
+    fileprivate var _esporteSelecionado: EsporteMO?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +69,11 @@ class NovoEventoTableViewController: UITableViewController {
        
         if let identifier = segue.identifier {
             if identifier == Segue.showEscolhaEsporte.rawValue {
-                segue.destination.navigationItem.title = "Esportes"
+                let controller = segue.destination as! EsportesTableViewController
+                controller.navigationItem.title     = "Esportes"
+                controller.isSelecaoMultipla        = false
+                controller.selecionaEsporteDelegate = self
+                
             }
         }
     }
@@ -128,9 +136,70 @@ class NovoEventoTableViewController: UITableViewController {
 
     }
     
+    
+    @IBAction func salvarEvento(_ sender: UIBarButtonItem) {
+        
+        let nomeIsEmpty      = self.nomeEventoTextField.text!.isEmpty
+        let esporteIsEmpty   = self.esporteTextField.text!.isEmpty
+        let localIsEmpty     = self.localTextField.text!.isEmpty
+        let dataHorasIsEmpty = self.dataHoraTextField.text!.isEmpty
+        
+        
+        if nomeIsEmpty || esporteIsEmpty || localIsEmpty || dataHorasIsEmpty {
+            let alertController = UIAlertController(title: "Oops!",
+                                                    message: "É necessário preencher todos os campso para criar o evento de maneira correta.",
+                                                    preferredStyle: .alert)
+            
+            let actionOk = UIAlertAction(title: "OK",
+                                         style: .default,
+                                         handler: nil)
+            
+            alertController.addAction(actionOk)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func changeDataHora(_ sender: UIDatePicker) {
+        
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        
+        self.dataHoraTextField.text = dataFormatter.string(from: sender.date)
+    }
+    
     @IBAction func unwindEsportePronto(segue: UIStoryboardSegue) {
         
     }
+    
+    @IBAction func unwindLocalPronto(segue: UIStoryboardSegue) {
+        
+        if let controller = segue.source as? LocalViewController {
+            self.localTextField.text = controller.local.descricao
+        }
+    }
+    
+}
+
+extension NovoEventoTableViewController : SelecionaEsporteDelegate {
+    
+    var esporteSelecionado: EsporteMO?  {
+        get {
+            return self._esporteSelecionado
+        }
+        set (esporte) {
+            self._esporteSelecionado = esporte
+        }
+    }
+
+    
+    func selecionar(esporte: EsporteMO) {
+        
+        esporteSelecionado = esporte
+        
+        self.esporteTextField.text = self.esporteSelecionado?.descricao
+    }
+
 }
 
 extension NovoEventoTableViewController : UINavigationControllerDelegate {

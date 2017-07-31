@@ -23,6 +23,8 @@ class EsportesTableViewController: UITableViewController {
     
     public var isParaFavorito: Bool!
     public var usuario: UsuarioMO!
+    public var isSelecaoMultipla = true
+    public var selecionaEsporteDelegate: SelecionaEsporteDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,44 +38,48 @@ class EsportesTableViewController: UITableViewController {
     
     func configurarButtonsCorretamente() {
         
-        guard let _ = isParaFavorito else {
+        if !isSelecaoMultipla {
             salvarButtonItem.isEnabled = false
             salvarButtonItem.tintColor = UIColor.clear
-            
-            return
         }
         
     }
+    
     
     func filtarEsportesFavoritosOrInteressados() {
         
         let esportes = esporteManager.recuperarTodos()
         
     
-        /*let esportesFiltrados = esportes.filter { (esporte) -> Bool in
-            
-            let esportesUsuarios     = self.usuario.esportesUsuarios?.allObjects as! [UsuarioEsporteMO]
-            let contain: [UsuarioEsporteMO]
-            
-            if self.isParaFavorito {
+        if isSelecaoMultipla {
+            let esportesFiltrados = esportes.filter { (esporte) -> Bool in
                 
-                contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
-                    return usuarioEsporte.esporte == esporte && !usuarioEsporte.isFavorito
-                })
-            }
-            else {
+                let esportesUsuarios     = self.usuario.esportesUsuarios?.allObjects as! [UsuarioEsporteMO]
+                let contain: [UsuarioEsporteMO]
                 
-                contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
-                    return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito
-                })
+                if self.isParaFavorito {
+                    
+                    contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
+                        return usuarioEsporte.esporte == esporte && !usuarioEsporte.isFavorito
+                    })
+                }
+                else {
+                    
+                    contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
+                        return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito
+                    })
+                }
+                
+                return contain.count == 0
             }
             
-            return contain.count == 0
+            
+            self.esportes = esportesFiltrados
         }
-        
-        
-        self.esportes = esportesFiltrados*/
-        self.esportes = esportes
+        else {
+            self.esportes = esportes
+        }
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,13 +124,28 @@ class EsportesTableViewController: UITableViewController {
 
        
         cell.textLabel?.text = esporte.descricao
-        /*let filtrados = self.usuario.esportesUsuarios!.filter({ (item) -> Bool in
-            let usuarioEsporte = item as! UsuarioEsporteMO
-            
-            return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito == isParaFavorito
-        })
         
-        cell.accessoryType = filtrados.count == 1 ? .checkmark : .none*/
+        if isSelecaoMultipla {
+            let filtrados = self.usuario.esportesUsuarios!.filter({ (item) -> Bool in
+                let usuarioEsporte = item as! UsuarioEsporteMO
+                
+                return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito == isParaFavorito
+            })
+            
+            cell.accessoryType = filtrados.count == 1 ? .checkmark : .none
+        }
+        else {
+            if let esporteSelecionado = selecionaEsporteDelegate?.esporteSelecionado {
+                if esporte == esporteSelecionado {
+                    cell.accessoryType = .checkmark
+                }
+                else {
+                    cell.accessoryType = .none
+                }
+            }
+        }
+        
+        
         return cell
     }
     
@@ -135,26 +156,31 @@ class EsportesTableViewController: UITableViewController {
         let esporte  = esportes[indexPath.row]
         
         
-        /*if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
+        if isSelecaoMultipla {
+            if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
+                
+                cell.accessoryType = .none
+                let usuarioEsporte = self.usuario.esportesUsuarios?.allObjects[indice] as! UsuarioEsporteMO
+                self.usuario.removeFromEsportesUsuarios(usuarioEsporte)
+            }
+            else {
+                cell.accessoryType = .checkmark
+                
+                let usuarioEsporteMO        = UsuarioEsporteMO(context: DataManager.shared.context)
+                usuarioEsporteMO.isFavorito = self.isParaFavorito
+                usuarioEsporteMO.esporte    = esporte
+                
+                self.usuario.addToEsportesUsuarios(usuarioEsporteMO)
+            }
             
-            cell.accessoryType = .none
-            let usuarioEsporte = self.usuario.esportesUsuarios?.allObjects[indice] as! UsuarioEsporteMO
-            self.usuario.removeFromEsportesUsuarios(usuarioEsporte)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
-        else {
-            cell.accessoryType = .checkmark
-            
-            let usuarioEsporteMO        = UsuarioEsporteMO(context: DataManager.shared.context)
-            usuarioEsporteMO.isFavorito = self.isParaFavorito
-            usuarioEsporteMO.esporte    = esporte
-            
-            self.usuario.addToEsportesUsuarios(usuarioEsporteMO)
-        }*/
     
-        self.navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+        else {
+            self.navigationController?.popViewController(animated: true)
+            self.selecionaEsporteDelegate?.selecionar(esporte: esporte)
+        }
         
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     

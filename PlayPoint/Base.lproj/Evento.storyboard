@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="g7Y-9R-Dag">
-                                                    <rect key="frame" x="155" y="92" width="64" height="64"/>
+                                                    <rect key="frame" x="155.5" y="92" width="64" height="64"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -189,6 +189,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="523125084.16155797">
                                                         <!--2017-07-30 16:31:24 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="changeDataHora:" destination="eKX-R7-nIa" eventType="valueChanged" id="3k9-Ix-iSF"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -210,10 +213,14 @@
                     <navigationItem key="navigationItem" title="Novo Evento" id="x2P-Vd-Erf">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="zp4-kI-UoI">
                             <connections>
-                                <segue destination="esl-GC-mab" kind="unwind" unwindAction="unwindCancelarNovoEventoWithSegue:" id="0Rr-bg-LhU"/>
+                                <segue destination="esl-GC-mab" kind="unwind" identifier="unwindCancelarNovoEvento" unwindAction="unwindCancelarNovoEventoWithSegue:" id="0Rr-bg-LhU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" style="done" id="aAg-sB-yMk"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" style="done" id="aAg-sB-yMk">
+                            <connections>
+                                <action selector="salvarEvento:" destination="eKX-R7-nIa" id="gEf-qQ-wty"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dataHoraDatePicker" destination="14d-aS-Dtr" id="ZkB-gH-04a"/>
@@ -227,7 +234,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IX-d1-cQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="esl-GC-mab" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-70" y="1373"/>
+            <point key="canvasLocation" x="-342" y="1371"/>
         </scene>
         <!--Esportes-->
         <scene sceneID="CpO-BG-ODc">
@@ -240,7 +247,7 @@
         <!--Local-->
         <scene sceneID="kds-ed-p22">
             <objects>
-                <viewController id="vlN-N7-zot" sceneMemberID="viewController">
+                <viewController id="vlN-N7-zot" customClass="LocalViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NBt-al-JV1"/>
                         <viewControllerLayoutGuide type="bottom" id="uuL-Xk-5q7"/>
@@ -249,23 +256,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-57-WNI">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TUO-XU-TU9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                            </mapView>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32z-w2-B81">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pcm-lj-LW6">
+                                                <rect key="frame" x="18" y="21.5" width="339" height="25"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BF5-tz-2z1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="25"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jB-pY-icW">
+                                                        <rect key="frame" x="309" y="0.0" width="30" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="Dcf-gm-3xf"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="busca"/>
+                                                        <connections>
+                                                            <action selector="pesquisar:" destination="vlN-N7-zot" eventType="touchUpInside" id="Edg-AO-Pyw"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Pcm-lj-LW6" firstAttribute="centerY" secondItem="32z-w2-B81" secondAttribute="centerY" id="25I-6n-8ia"/>
+                                            <constraint firstItem="Pcm-lj-LW6" firstAttribute="centerX" secondItem="32z-w2-B81" secondAttribute="centerX" id="CVU-t8-KeV"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Pcm-lj-LW6" secondAttribute="trailing" constant="10" id="Jde-mj-KaK"/>
+                                            <constraint firstAttribute="height" constant="68" id="bPM-9s-Y35"/>
+                                            <constraint firstItem="Pcm-lj-LW6" firstAttribute="leading" secondItem="32z-w2-B81" secondAttribute="leadingMargin" constant="10" id="ia8-5H-1Op"/>
+                                        </constraints>
+                                    </view>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eY-57-WNI">
+                                        <rect key="frame" x="0.0" y="68" width="375" height="486"/>
+                                    </mapView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uuL-Xk-5q7" firstAttribute="top" secondItem="4eY-57-WNI" secondAttribute="bottom" id="1Xq-x2-mlP"/>
-                            <constraint firstAttribute="trailing" secondItem="4eY-57-WNI" secondAttribute="trailing" id="8YW-28-M4Z"/>
-                            <constraint firstItem="4eY-57-WNI" firstAttribute="leading" secondItem="nWd-qT-UxH" secondAttribute="leading" id="MNt-he-i0h"/>
-                            <constraint firstItem="4eY-57-WNI" firstAttribute="top" secondItem="NBt-al-JV1" secondAttribute="bottom" id="tnN-SW-Nrm"/>
+                            <constraint firstItem="uuL-Xk-5q7" firstAttribute="top" secondItem="TUO-XU-TU9" secondAttribute="bottom" id="3Vi-sC-DoR"/>
+                            <constraint firstItem="TUO-XU-TU9" firstAttribute="leading" secondItem="nWd-qT-UxH" secondAttribute="leading" id="6ZB-wq-ujE"/>
+                            <constraint firstItem="TUO-XU-TU9" firstAttribute="top" secondItem="NBt-al-JV1" secondAttribute="bottom" id="ITT-8L-zV4"/>
+                            <constraint firstAttribute="trailing" secondItem="TUO-XU-TU9" secondAttribute="trailing" id="rWc-AB-xaX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Local" id="SAW-bM-2Nu"/>
+                    <navigationItem key="navigationItem" title="Local" id="SAW-bM-2Nu">
+                        <barButtonItem key="rightBarButtonItem" title="Pronto" style="done" id="BPx-w7-ibB">
+                            <connections>
+                                <segue destination="nxE-9Q-ybN" kind="unwind" unwindAction="unwindLocalProntoWithSegue:" id="0aH-Vq-KyH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="4eY-57-WNI" id="042-zR-PF3"/>
+                        <outlet property="termoPesquisaTextField" destination="BF5-tz-2z1" id="6KX-4G-N7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Go-dO-W4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nxE-9Q-ybN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="464" y="1697"/>
+            <point key="canvasLocation" x="744.79999999999995" y="1625.0374812593705"/>
         </scene>
         <!--Evento-->
         <scene sceneID="88c-gr-VbF">
@@ -285,10 +342,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHL-hX-25M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649" y="1373"/>
+            <point key="canvasLocation" x="-1180" y="1372"/>
         </scene>
     </scenes>
     <resources>
+        <image name="busca" width="25" height="25"/>
         <image name="novo_evento" width="25" height="25"/>
         <image name="photoalbum" width="64" height="64"/>
     </resources>

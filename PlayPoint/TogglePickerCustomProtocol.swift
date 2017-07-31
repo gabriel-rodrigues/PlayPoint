@@ -23,6 +23,11 @@ extension TogglePickerCustomProtocol {
             self.tableView.beginUpdates()
             self.tableView.deselectRow(at: indexPath, animated: true)
             self.tableView.endUpdates()
+            
+            if !view.isHidden {
+                let indexPathPicker = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                self.tableView.scrollToRow(at: indexPathPicker, at: .none, animated: true)
+            }
         }
     }
     
