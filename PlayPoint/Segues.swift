@@ -10,7 +10,9 @@ import Foundation
 
 internal enum Segue: String {
     
-    case showTabBarController  = "showTabBarController"
-    case showEsportesFavoritos = "showEsportesFavoritos"
+    case showTabBarController     = "showTabBarController"
+    case showEsportesFavoritos    = "showEsportesFavoritos"
     case showEsportesInteressados = "showEsportesInteressados"
+    case showEscolhaEsporte       = "showEscolhaEsporte"
+    case showNovoEvento           = "showNovoEvento"
 }

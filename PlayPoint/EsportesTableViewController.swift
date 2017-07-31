@@ -11,19 +11,38 @@ import CoreData
 
 class EsportesTableViewController: UITableViewController {
 
-    private let esporteManager = EsporteDataManager()
-    private var esportes       = [EsporteMO]()
-    private let searchController = UISearchController(searchResultsController: nil)
+    
+    @IBOutlet weak var salvarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var prontoButtonItem: UIBarButtonItem!
+    
+    
+    private let esporteManager    = EsporteDataManager()
+    private var esportes          = [EsporteMO]()
+    private var esportesFiltrados = [EsporteMO]()
+    private let searchController  = UISearchController(searchResultsController: nil)
     
     public var isParaFavorito: Bool!
     public var usuario: UsuarioMO!
+    public var isSelecaoMultipla = true
+    public var selecionaEsporteDelegate: SelecionaEsporteDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
+        self.configurarButtonsCorretamente()
         self.configurarSearchController()
         self.filtarEsportesFavoritosOrInteressados()
+    }
+    
+    
+    func configurarButtonsCorretamente() {
+        
+        if !isSelecaoMultipla {
+            salvarButtonItem.isEnabled = false
+            salvarButtonItem.tintColor = UIColor.clear
+        }
+        
     }
     
     
@@ -32,29 +51,35 @@ class EsportesTableViewController: UITableViewController {
         let esportes = esporteManager.recuperarTodos()
         
     
-        let esportesFiltrados = esportes.filter { (esporte) -> Bool in
-            
-            let esportesUsuarios     = self.usuario.esportesUsuarios?.allObjects as! [UsuarioEsporteMO]
-            let contain: [UsuarioEsporteMO]
-            
-            if self.isParaFavorito {
+        if isSelecaoMultipla {
+            let esportesFiltrados = esportes.filter { (esporte) -> Bool in
                 
-                contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
-                    return usuarioEsporte.esporte == esporte && !usuarioEsporte.isFavorito
-                })
-            }
-            else {
+                let esportesUsuarios     = self.usuario.esportesUsuarios?.allObjects as! [UsuarioEsporteMO]
+                let contain: [UsuarioEsporteMO]
                 
-                contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
-                    return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito
-                })
+                if self.isParaFavorito {
+                    
+                    contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
+                        return usuarioEsporte.esporte == esporte && !usuarioEsporte.isFavorito
+                    })
+                }
+                else {
+                    
+                    contain = esportesUsuarios.filter({ (usuarioEsporte) -> Bool in
+                        return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito
+                    })
+                }
+                
+                return contain.count == 0
             }
             
-            return contain.count == 0
+            
+            self.esportes = esportesFiltrados
         }
-        
-        
-        self.esportes = esportesFiltrados
+        else {
+            self.esportes = esportes
+        }
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,10 +89,12 @@ class EsportesTableViewController: UITableViewController {
 
     func configurarSearchController() {
         
+        self.searchController.delegate = self
         self.searchController.searchResultsUpdater             = self
         self.searchController.dimsBackgroundDuringPresentation = false
-        self.searchController.searchBar.placeholder = "Buscar"
+        self.searchController.searchBar.placeholder = "Buscar por esportes"
         self.searchController.searchBar.setValue("Cancelar", forKey:"_cancelButtonText")
+        self.searchController.searchBar.searchBarStyle = .minimal
         self.definesPresentationContext = true
         self.tableView.tableHeaderView  = searchController.searchBar
     }
@@ -81,51 +108,79 @@ class EsportesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if self.searchController.isActive && !searchController.searchBar.text!.isEmpty {
+            return self.esportesFiltrados.count
+        }
+        
         return self.esportes.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celulaEsporte", for: indexPath)
-
-        let esporte = self.esportes[indexPath.row]
+        
+        let cell     = tableView.dequeueReusableCell(withIdentifier: "celulaEsporte", for: indexPath)
+        let esportes = self.searchController.isActive && !searchController.searchBar.text!.isEmpty ? self.esportesFiltrados : self.esportes
+        let esporte  = esportes[indexPath.row]
 
        
         cell.textLabel?.text = esporte.descricao
-        let filtrados = self.usuario.esportesUsuarios!.filter({ (item) -> Bool in
-            let usuarioEsporte = item as! UsuarioEsporteMO
-            
-            return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito == isParaFavorito
-        })
         
-        cell.accessoryType = filtrados.count == 1 ? .checkmark : .none
+        if isSelecaoMultipla {
+            let filtrados = self.usuario.esportesUsuarios!.filter({ (item) -> Bool in
+                let usuarioEsporte = item as! UsuarioEsporteMO
+                
+                return usuarioEsporte.esporte == esporte && usuarioEsporte.isFavorito == isParaFavorito
+            })
+            
+            cell.accessoryType = filtrados.count == 1 ? .checkmark : .none
+        }
+        else {
+            if let esporteSelecionado = selecionaEsporteDelegate?.esporteSelecionado {
+                if esporte == esporteSelecionado {
+                    cell.accessoryType = .checkmark
+                }
+                else {
+                    cell.accessoryType = .none
+                }
+            }
+        }
+        
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell    = tableView.cellForRow(at: indexPath)!
-        let esporte = self.esportes[indexPath.row]
+        let cell     = tableView.cellForRow(at: indexPath)!
+        let esportes = self.searchController.isActive && !searchController.searchBar.text!.isEmpty ? self.esportesFiltrados : self.esportes
+        let esporte  = esportes[indexPath.row]
         
         
-        if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
+        if isSelecaoMultipla {
+            if let indice = self.obterIndiceParaFavoritoOrInteressado(esporte: esporte) {
+                
+                cell.accessoryType = .none
+                let usuarioEsporte = self.usuario.esportesUsuarios?.allObjects[indice] as! UsuarioEsporteMO
+                self.usuario.removeFromEsportesUsuarios(usuarioEsporte)
+            }
+            else {
+                cell.accessoryType = .checkmark
+                
+                let usuarioEsporteMO        = UsuarioEsporteMO(context: DataManager.shared.context)
+                usuarioEsporteMO.isFavorito = self.isParaFavorito
+                usuarioEsporteMO.esporte    = esporte
+                
+                self.usuario.addToEsportesUsuarios(usuarioEsporteMO)
+            }
             
-            cell.accessoryType = .none
-            let usuarioEsporte = self.usuario.esportesUsuarios?.allObjects[indice] as! UsuarioEsporteMO
-            self.usuario.removeFromEsportesUsuarios(usuarioEsporte)
-        }
-        else {
-            cell.accessoryType = .checkmark
-            
-            let usuarioEsporteMO        = UsuarioEsporteMO(context: DataManager.shared.context)
-            usuarioEsporteMO.isFavorito = self.isParaFavorito
-            usuarioEsporteMO.esporte    = esporte
-            
-            self.usuario.addToEsportesUsuarios(usuarioEsporteMO)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     
+        else {
+            self.navigationController?.popViewController(animated: true)
+            self.selecionaEsporteDelegate?.selecionar(esporte: esporte)
+        }
         
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
@@ -139,13 +194,34 @@ class EsportesTableViewController: UITableViewController {
         
         return indiceEsporteUsuario
     }
+    
+    func filtrarEsportes(por termo: String) {
+        
+        self.esportesFiltrados = self.esportes.filter({ (esporte) -> Bool in
+            return esporte.descricao!.lowercased().contains(termo.lowercased())
+        })
+        
+        
+        self.tableView.reloadData()
+    }
 }
 
-
+extension EsportesTableViewController : UISearchControllerDelegate {
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.searchBarStyle = .default
+        searchController.searchBar.barTintColor   = AppDelegate.shared.laranjaApp
+        searchController.searchBar.tintColor      = UIColor.white
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.searchBarStyle = .minimal
+    }
+}
 
 extension EsportesTableViewController : UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        self.filtrarEsportes(por: searchController.searchBar.text!)
     }
 }

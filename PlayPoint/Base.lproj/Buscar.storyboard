@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1dQ-KD-gbG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buscar-->
+        <scene sceneID="3Nz-82-ZYd">
+            <objects>
+                <viewController id="Z4f-ho-TFq" customClass="BuscaEventoViewController" customModule="PlayPoint" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vKM-xz-8Ko"/>
+                        <viewControllerLayoutGuide type="bottom" id="rZF-it-NnH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z5V-jX-I3N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="busca" id="rv9-hl-mAj"/>
+                    <navigationItem key="navigationItem" title="Buscar" id="32a-WX-mbV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P05-X6-NZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-0.80000000000000004" y="671.51424287856082"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qxc-7w-mrz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1dQ-KD-gbG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VnP-Ep-uRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z4f-ho-TFq" kind="relationship" relationship="rootViewController" id="4go-hi-tBa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pn8-vz-d8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-940" y="671.51424287856082"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="busca" width="25" height="25"/>
+    </resources>
+</document>
