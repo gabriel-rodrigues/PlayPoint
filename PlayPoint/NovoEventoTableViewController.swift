@@ -24,7 +24,7 @@ class NovoEventoTableViewController: UITableViewController {
 
     
     fileprivate var _esporteSelecionado: EsporteMO?
-    
+    var local: LocalItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,15 +139,17 @@ class NovoEventoTableViewController: UITableViewController {
     
     @IBAction func salvarEvento(_ sender: UIBarButtonItem) {
         
+        
+        let fotoIsNotSelected   = self.fotoImageView.image == nil
         let nomeIsEmpty      = self.nomeEventoTextField.text!.isEmpty
         let esporteIsEmpty   = self.esporteTextField.text!.isEmpty
         let localIsEmpty     = self.localTextField.text!.isEmpty
         let dataHorasIsEmpty = self.dataHoraTextField.text!.isEmpty
         
         
-        if nomeIsEmpty || esporteIsEmpty || localIsEmpty || dataHorasIsEmpty {
+        if fotoIsNotSelected || nomeIsEmpty || esporteIsEmpty || localIsEmpty || dataHorasIsEmpty {
             let alertController = UIAlertController(title: "Oops!",
-                                                    message: "É necessário preencher todos os campso para criar o evento de maneira correta.",
+                                                    message: "É necessário preencher todos os campos e escolher a imagem para criar o evento de maneira correta.",
                                                     preferredStyle: .alert)
             
             let actionOk = UIAlertAction(title: "OK",
@@ -158,6 +160,30 @@ class NovoEventoTableViewController: UITableViewController {
             
             self.present(alertController, animated: true, completion: nil)
         }
+        else {
+            self.criarEvento()
+        }
+    }
+    
+    private func criarEvento()  {
+        
+        let usuario             = UsuarioDataManager().recuperarUnicoUsuario()!
+        let evento              = EventoMO(context: DataManager.shared.context)
+        evento.nome             = self.nomeEventoTextField.text
+        evento.dataCriacao      = Date() as NSDate
+        evento.dataInicio       = self.dataHoraDatePicker.date as NSDate
+        evento.imagem           = UIImagePNGRepresentation(self.fotoImageView.image!)! as NSData
+        evento.esporte          = self.esporteSelecionado
+        evento.local            = LocalMO(context: DataManager.shared.context)
+        evento.local!.nome      = self.local.nome
+        evento.local!.latitude  = self.local.latitude
+        evento.local!.longitude = self.local.longitude
+        evento.addToUsuarios(usuario)
+        
+        
+        DataManager.shared.save()
+        
+        self.performSegue(withIdentifier: Segue.unwindCancelarNovoEvento.rawValue, sender: nil)
     }
     
     @IBAction func changeDataHora(_ sender: UIDatePicker) {
@@ -175,7 +201,8 @@ class NovoEventoTableViewController: UITableViewController {
     @IBAction func unwindLocalPronto(segue: UIStoryboardSegue) {
         
         if let controller = segue.source as? LocalViewController {
-            self.localTextField.text = controller.local.descricao
+            self.local               = controller.local
+            self.localTextField.text = controller.local.nome
         }
     }
     

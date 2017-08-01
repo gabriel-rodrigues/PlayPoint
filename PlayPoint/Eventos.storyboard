@@ -84,6 +84,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="fkV-Ia-Tnm" id="rxs-5c-gGb"/>
+                                    <outlet property="delegate" destination="fkV-Ia-Tnm" id="10K-IQ-dJZ"/>
                                 </connections>
                             </tableView>
                         </subviews>
