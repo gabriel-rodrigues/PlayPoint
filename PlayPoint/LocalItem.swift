@@ -12,14 +12,14 @@ import MapKit
 
 public struct LocalItem {
     
-    public var descricao: String
+    public var nome: String
     public var latitude: Double
     public var longitude: Double
     
     
     public init(markplace: CLPlacemark) {
         
-        self.descricao = markplace.name!
+        self.nome      = markplace.name!
         self.latitude  = markplace.location!.coordinate.latitude
         self.longitude = markplace.location!.coordinate.longitude
     }

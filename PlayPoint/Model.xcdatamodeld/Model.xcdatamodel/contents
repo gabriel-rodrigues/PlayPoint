@@ -15,8 +15,8 @@
         <relationship name="usuarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Usuario" inverseName="eventos" inverseEntity="Usuario" syncable="YES"/>
     </entity>
     <entity name="Local" representedClassName="LocalMO" syncable="YES" codeGenerationType="class">
-        <attribute name="latitude" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitude" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nome" attributeType="String" syncable="YES"/>
         <relationship name="evento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="local" inverseEntity="Evento" syncable="YES"/>
     </entity>

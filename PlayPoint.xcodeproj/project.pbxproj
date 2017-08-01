@@ -269,8 +269,6 @@
 		7B94372D1EC3E4DF005C9C0F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				D7CD89D81F26DE2E00715C1C /* Properties */,
-				D7CD89B71F26DDA700715C1C /* Class */,
 				D7CD89B61F26DC2B00715C1C /* Managers */,
 				D7CD89B51F26DC2300715C1C /* Modelo */,
 			);
@@ -329,20 +327,6 @@
 				D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */,
 			);
 			name = Managers;
-			sourceTree = "<group>";
-		};
-		D7CD89B71F26DDA700715C1C /* Class */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Class;
-			sourceTree = "<group>";
-		};
-		D7CD89D81F26DE2E00715C1C /* Properties */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Properties;
 			sourceTree = "<group>";
 		};
 		D7F6A2E81F29770000BECD4B /* Extensions */ = {

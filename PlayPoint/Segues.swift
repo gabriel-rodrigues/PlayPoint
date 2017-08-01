@@ -15,4 +15,5 @@ internal enum Segue: String {
     case showEsportesInteressados = "showEsportesInteressados"
     case showEscolhaEsporte       = "showEscolhaEsporte"
     case showNovoEvento           = "showNovoEvento"
+    case unwindCancelarNovoEvento = "unwindCancelarNovoEvento"
 }
