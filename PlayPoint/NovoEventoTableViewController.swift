@@ -180,7 +180,6 @@ class NovoEventoTableViewController: UITableViewController {
         evento.local!.longitude = self.local.longitude
         evento.addToUsuarios(usuario)
         
-        
         DataManager.shared.save()
         
         self.performSegue(withIdentifier: Segue.unwindCancelarNovoEvento.rawValue, sender: nil)
