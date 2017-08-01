@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Esporte" representedClassName="EsporteMO" syncable="YES" codeGenerationType="class">
         <attribute name="descricao" attributeType="String" syncable="YES"/>
-        <relationship name="esportesUsuarios" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsuarioEsporte" inverseName="esporte" inverseEntity="UsuarioEsporte" syncable="YES"/>
+        <relationship name="esportesUsuarios" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UsuarioEsporte" inverseName="esporte" inverseEntity="UsuarioEsporte" syncable="YES"/>
         <relationship name="eventos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="esporte" inverseEntity="Evento" syncable="YES"/>
     </entity>
     <entity name="Evento" representedClassName="EventoMO" syncable="YES" codeGenerationType="class">
