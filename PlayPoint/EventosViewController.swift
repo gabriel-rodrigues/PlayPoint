@@ -189,10 +189,3 @@ extension EventosViewController : UITableViewDelegate {
     }
 }
 
-
-extension EventosViewController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-}

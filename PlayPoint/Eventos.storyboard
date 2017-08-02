@@ -34,32 +34,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yMY-lu-lmk">
-                                                    <rect key="frame" x="8" y="8.5" width="326" height="70"/>
+                                                    <rect key="frame" x="8" y="8.5" width="326" height="63.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-Jj-hRT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="70" id="HlF-GD-vEi"/>
-                                                                <constraint firstAttribute="width" constant="70" id="igV-un-fGU"/>
+                                                                <constraint firstAttribute="height" constant="60" id="HlF-GD-vEi"/>
+                                                                <constraint firstAttribute="width" constant="60" id="igV-un-fGU"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Tv-B0-kQz">
-                                                            <rect key="frame" x="80" y="0.0" width="246" height="63.5"/>
+                                                            <rect key="frame" x="70" y="0.0" width="256" height="63.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbv-9b-YRl">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBx-9B-HcI">
-                                                                    <rect key="frame" x="0.0" y="25.5" width="246" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="25.5" width="256" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data e Hora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMb-6D-i32">
-                                                                    <rect key="frame" x="0.0" y="47.5" width="246" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="47.5" width="256" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -118,7 +118,7 @@
                 <viewControllerPlaceholder storyboardName="Evento" id="9GQ-Sn-ZvY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIj-AG-gji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="300"/>
+            <point key="canvasLocation" x="-10" y="572"/>
         </scene>
         <!--Eventos-->
         <scene sceneID="wfA-Oh-D7x">
