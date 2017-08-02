@@ -167,18 +167,22 @@ class NovoEventoTableViewController: UITableViewController {
     
     private func criarEvento()  {
         
-        let usuario             = UsuarioDataManager().recuperarUnicoUsuario()!
-        let evento              = EventoMO(context: DataManager.shared.context)
-        evento.nome             = self.nomeEventoTextField.text
-        evento.dataCriacao      = Date() as NSDate
-        evento.dataInicio       = self.dataHoraDatePicker.date as NSDate
-        evento.imagem           = UIImagePNGRepresentation(self.fotoImageView.image!)! as NSData
-        evento.esporte          = self.esporteSelecionado
-        evento.local            = LocalMO(context: DataManager.shared.context)
-        evento.local!.nome      = self.local.nome
-        evento.local!.latitude  = self.local.latitude
-        evento.local!.longitude = self.local.longitude
-        evento.addToUsuarios(usuario)
+        let usuario                  = UsuarioDataManager().recuperarUnicoUsuario()!
+        let evento                   = EventoMO(context: DataManager.shared.context)
+        let participante             = ParticipanteMO(context: DataManager.shared.context)
+        participante.isCriador       = true
+        participante.dataConfirmacao = Date() as NSDate
+        participante.usuario         = usuario
+        evento.nome                  = self.nomeEventoTextField.text
+        evento.dataCriacao           = Date() as NSDate
+        evento.dataInicio            = self.dataHoraDatePicker.date as NSDate
+        evento.imagem                = UIImagePNGRepresentation(self.fotoImageView.image!)! as NSData
+        evento.esporte               = self.esporteSelecionado
+        evento.local                 = LocalMO(context: DataManager.shared.context)
+        evento.local!.nome           = self.local.nome
+        evento.local!.latitude       = self.local.latitude
+        evento.local!.longitude      = self.local.longitude
+        participante.evento          = evento
         
         DataManager.shared.save()
         

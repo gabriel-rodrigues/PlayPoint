@@ -39,8 +39,12 @@ class PerfilTableViewController: UITableViewController {
         
         self.usuarioDesdeLabel.text = dataFormatter.string(from: usuario.dataCadastro! as Date)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         self.configurarLabelsQuantidadesParaEsportes()
+        self.configurarLabelsQuantidadeEventos()
     }
     
     func configurarLabelsQuantidadesParaEsportes() {
@@ -53,6 +57,16 @@ class PerfilTableViewController: UITableViewController {
         self.quantidadeInteressadosLabel.text = (quantidadeInteressados > 0) ? "\(quantidadeInteressados)" : ""
         
     }
+    
+    
+    func configurarLabelsQuantidadeEventos() {
+        
+        let quantidadeEventosCriados      = recuperarQuantidadeEventosMeus()
+        let quantidadesEventosConfirmados = recuperarQuantidadeEventosConfirmados()
+        
+        self.quantidadeEventosMeusLabel.text        = (quantidadeEventosCriados > 0) ? "\(quantidadeEventosCriados)" : ""
+        self.quantidadeEventosConfirmadosLabel.text = (quantidadesEventosConfirmados > 0) ? "\(quantidadesEventosConfirmados)" : ""
+    }
 
     func recuperarQuantidade(isFavorito: Bool) -> Int {
         
@@ -60,6 +74,36 @@ class PerfilTableViewController: UITableViewController {
             let usuarioEsporte = item as! UsuarioEsporteMO
             
             return usuarioEsporte.isFavorito == isFavorito
+        })
+        
+        guard let itens = itensFiltrados else {
+            return 0
+        }
+        
+        return itens.count
+    }
+    
+    func recuperarQuantidadeEventosMeus() -> Int {
+        
+        let itensFiltrados = self.usuario.participantes?.filter({ (participante) -> Bool in
+            let usuarioParticipante = participante as! ParticipanteMO
+            
+            return usuarioParticipante.isCriador
+        })
+        
+        guard let itens = itensFiltrados else {
+            return 0
+        }
+        
+        return itens.count
+    }
+    
+    func recuperarQuantidadeEventosConfirmados() -> Int {
+        
+        let itensFiltrados = self.usuario.participantes?.filter({ (participante) -> Bool in
+            let usuarioParticipante = participante as! ParticipanteMO
+            
+            return usuarioParticipante.dataConfirmacao != nil && usuarioParticipante.dataCancelamento == nil
         })
         
         guard let itens = itensFiltrados else {
