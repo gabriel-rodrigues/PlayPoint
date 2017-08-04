@@ -35,6 +35,7 @@
 		D74417561F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */; };
 		D74417571F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */; };
 		D74417581F2E4EC000252BF3 /* BuscaEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */; };
+		D74BFE971F3413810023A862 /* EventoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BFE961F3413810023A862 /* EventoDataManager.swift */; };
 		D76E30F21F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
 		D76E30F31F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
 		D76E30F41F26BB58007C9EEE /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E30F11F26BB58007C9EEE /* Segues.swift */; };
@@ -107,6 +108,7 @@
 		D74417501F2E41B500252BF3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D74417531F2E436A00252BF3 /* TogglePickerCustomProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TogglePickerCustomProtocol.swift; sourceTree = "<group>"; };
 		D74417551F2E4EC000252BF3 /* BuscaEventoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscaEventoViewController.swift; sourceTree = "<group>"; };
+		D74BFE961F3413810023A862 /* EventoDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoDataManager.swift; sourceTree = "<group>"; };
 		D76E30F11F26BB58007C9EEE /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		D76E31021F26C57E007C9EEE /* UsuarioItemTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioItemTest.swift; sourceTree = "<group>"; };
 		D79164C41F2C39ED00484563 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				D7CD89B11F26DB2C00715C1C /* DataManager.swift */,
 				D7F42FC11F26E454003AEEA9 /* UsuarioDataManager.swift */,
 				D73FC2301F2ACAE0002DC7D7 /* EsporteDataManager.swift */,
+				D74BFE961F3413810023A862 /* EventoDataManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				D72FC9E61F2AD347002BD5F0 /* DeleteProtocol.swift in Sources */,
 				D7CD89B21F26DB2C00715C1C /* DataManager.swift in Sources */,
 				D72FC9E41F2AD161002BD5F0 /* EsportesTableViewController.swift in Sources */,
+				D74BFE971F3413810023A862 /* EventoDataManager.swift in Sources */,
 				D72FC9E21F2ACBCF002BD5F0 /* EsporteItem.swift in Sources */,
 				D7F42FC61F26E873003AEEA9 /* UsuarioItem.swift in Sources */,
 				D73E03031F2E554500D6FA7C /* LocalViewController.swift in Sources */,

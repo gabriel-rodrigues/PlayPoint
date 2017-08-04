@@ -43,13 +43,13 @@ class PerfilTableViewController: UITableViewController {
         
         self.usuarioDesdeLabel.text = dataFormatter.string(from: usuario.dataCadastro! as Date)
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         tableView.beginUpdates()
         self.configurarLabelsQuantidadeEventos()
+        self.configurarLabelsQuantidadesParaEsportes()
         tableView.endUpdates()
     }
     
@@ -160,13 +160,15 @@ class PerfilTableViewController: UITableViewController {
     
     func fazerLogOut()  {
         
-        let itensDeletados =  manager.deletar()
+        let eventoManager    = EventoDataManager()
+        let eventosDeletados = eventoManager.deletar()
+        let itensDeletados   =  manager.deletar()
         
-        if itensDeletados {
+        if eventosDeletados && itensDeletados {
             let facebookLoginManager = FBSDKLoginManager()
             facebookLoginManager.logOut()
             
-            let controllerLogin: LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppDelegate.shared.loginControllerIdentifier) as! LoginViewController
+            let controllerLogin = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppDelegate.shared.loginControllerIdentifier) as! LoginViewController
             self.present(controllerLogin, animated: true, completion: nil)
         }
         else {
@@ -207,7 +209,6 @@ class PerfilTableViewController: UITableViewController {
     @IBAction func unwindSalvarEsportes(segue: UIStoryboardSegue) {
     
         DataManager.shared.save()
-        self.configurarLabelsQuantidadesParaEsportes()
     }
 
 }

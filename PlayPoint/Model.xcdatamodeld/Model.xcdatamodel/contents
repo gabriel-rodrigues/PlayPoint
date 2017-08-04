@@ -12,7 +12,7 @@
         <attribute name="nome" attributeType="String" syncable="YES"/>
         <relationship name="esporte" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Esporte" inverseName="eventos" inverseEntity="Esporte" syncable="YES"/>
         <relationship name="local" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Local" inverseName="evento" inverseEntity="Local" syncable="YES"/>
-        <relationship name="participantes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Participante" inverseName="evento" inverseEntity="Participante" syncable="YES"/>
+        <relationship name="participantes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Participante" inverseName="evento" inverseEntity="Participante" syncable="YES"/>
     </entity>
     <entity name="Local" representedClassName="LocalMO" syncable="YES" codeGenerationType="class">
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -24,7 +24,7 @@
         <attribute name="dataCancelamento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dataConfirmacao" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="isCriador" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="evento" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Evento" inverseName="participantes" inverseEntity="Evento" syncable="YES"/>
+        <relationship name="evento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="participantes" inverseEntity="Evento" syncable="YES"/>
         <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="participantes" inverseEntity="Usuario" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="UsuarioMO" syncable="YES" codeGenerationType="class">
