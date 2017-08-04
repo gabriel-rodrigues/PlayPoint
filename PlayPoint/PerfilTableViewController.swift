@@ -8,11 +8,11 @@
 
 import UIKit
 import FBSDKLoginKit
+import CoreData
 
 class PerfilTableViewController: UITableViewController {
 
-    let manager        = UsuarioDataManager()
-    private var usuario: UsuarioMO!
+    
     
     @IBOutlet weak var fotoImagemView: UIImageView!
     @IBOutlet weak var nomeLabel: UILabel!
@@ -22,6 +22,10 @@ class PerfilTableViewController: UITableViewController {
     @IBOutlet weak var quantidadeInteressadosLabel: UILabel!
     @IBOutlet weak var quantidadeEventosMeusLabel: UILabel!
     @IBOutlet weak var quantidadeEventosConfirmadosLabel: UILabel!
+    
+    
+    private let manager = UsuarioDataManager()
+    private var usuario: UsuarioMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +43,14 @@ class PerfilTableViewController: UITableViewController {
         
         self.usuarioDesdeLabel.text = dataFormatter.string(from: usuario.dataCadastro! as Date)
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.configurarLabelsQuantidadesParaEsportes()
+        tableView.beginUpdates()
         self.configurarLabelsQuantidadeEventos()
+        tableView.endUpdates()
     }
     
     func configurarLabelsQuantidadesParaEsportes() {
@@ -202,11 +208,8 @@ class PerfilTableViewController: UITableViewController {
     
         DataManager.shared.save()
         self.configurarLabelsQuantidadesParaEsportes()
-        /*guard let escolhidos = controller.esportesEscolhidos else {
-            return
-        }*/
-        
-        //self.manager.adicionar(esporte: escolhidos)
     }
 
 }
+
+

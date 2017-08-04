@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NovoEventoTableViewController: UITableViewController {
 
@@ -24,12 +25,15 @@ class NovoEventoTableViewController: UITableViewController {
 
     
     fileprivate var _esporteSelecionado: EsporteMO?
+    fileprivate var selecinouImagem  = false
+    
     var local: LocalItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,15 +143,14 @@ class NovoEventoTableViewController: UITableViewController {
     
     @IBAction func salvarEvento(_ sender: UIBarButtonItem) {
         
+    
+        let nomeIsEmpty       = self.nomeEventoTextField.text!.isEmpty
+        let esporteIsEmpty    = self.esporteTextField.text!.isEmpty
+        let localIsEmpty      = self.localTextField.text!.isEmpty
+        let dataHorasIsEmpty  = self.dataHoraTextField.text!.isEmpty
         
-        let fotoIsNotSelected   = self.fotoImageView.image == nil
-        let nomeIsEmpty      = self.nomeEventoTextField.text!.isEmpty
-        let esporteIsEmpty   = self.esporteTextField.text!.isEmpty
-        let localIsEmpty     = self.localTextField.text!.isEmpty
-        let dataHorasIsEmpty = self.dataHoraTextField.text!.isEmpty
         
-        
-        if fotoIsNotSelected || nomeIsEmpty || esporteIsEmpty || localIsEmpty || dataHorasIsEmpty {
+        if !selecinouImagem || nomeIsEmpty || esporteIsEmpty || localIsEmpty || dataHorasIsEmpty {
             let alertController = UIAlertController(title: "Oops!",
                                                     message: "É necessário preencher todos os campos e escolher a imagem para criar o evento de maneira correta.",
                                                     preferredStyle: .alert)
@@ -245,6 +248,7 @@ extension NovoEventoTableViewController: UIImagePickerControllerDelegate {
             self.fotoImageView.image         = imagemSelecionada
             self.fotoImageView.contentMode   = .scaleAspectFill
             self.fotoImageView.clipsToBounds = true
+            self.selecinouImagem             = true
             
             self.aplicarConstraintsParaExibirTamanhoImagemCorretamente()
         }

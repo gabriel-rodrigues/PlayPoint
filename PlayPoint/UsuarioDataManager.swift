@@ -17,7 +17,7 @@ public class UsuarioDataManager : DeleteProtocol {
     
     public func adicionar(novo usuarioItem: UsuarioItem) {
         
-        let usuario          = NSEntityDescription.insertNewObject(forEntityName: entityName, into: DataManager.shared.context) as! UsuarioMO
+        let usuario          = UsuarioMO(context: DataManager.shared.context)
         usuario.nomeCompleto = usuarioItem.nomeCompleto
         usuario.email        = usuarioItem.email
         usuario.dataCadastro = usuarioItem.dataCadastro! as NSDate
