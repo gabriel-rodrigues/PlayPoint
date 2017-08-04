@@ -20,9 +20,14 @@ extension DeleteProtocol {
     public func deletar() -> Bool  {
         
         let fetch   = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+    
         
-        if let _ = try? DataManager.shared.context.execute(request) {
+        if let result = try? DataManager.shared.context.fetch(fetch) {
+            
+            for objeto in result {
+                DataManager.shared.context.delete(objeto as! NSManagedObject)
+            }
+            
             DataManager.shared.save()
             return true
         }

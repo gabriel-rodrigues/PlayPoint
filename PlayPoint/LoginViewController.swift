@@ -61,8 +61,6 @@ class LoginViewController: UIViewController {
                             let usuarioItem = UsuarioItem(jsonFromLoginFacebook: JSON(result!))
                             self.manager.adicionar(novo: usuarioItem)
                             
-                            SwiftSpinner.hide()
-                            
                             self.performSegue(withIdentifier: Segue.showTabBarController.rawValue, sender: nil)
                         }
                     })

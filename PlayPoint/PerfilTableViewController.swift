@@ -8,11 +8,11 @@
 
 import UIKit
 import FBSDKLoginKit
+import CoreData
 
 class PerfilTableViewController: UITableViewController {
 
-    let manager        = UsuarioDataManager()
-    private var usuario: UsuarioMO!
+    
     
     @IBOutlet weak var fotoImagemView: UIImageView!
     @IBOutlet weak var nomeLabel: UILabel!
@@ -22,6 +22,10 @@ class PerfilTableViewController: UITableViewController {
     @IBOutlet weak var quantidadeInteressadosLabel: UILabel!
     @IBOutlet weak var quantidadeEventosMeusLabel: UILabel!
     @IBOutlet weak var quantidadeEventosConfirmadosLabel: UILabel!
+    
+    
+    private let manager = UsuarioDataManager()
+    private var usuario: UsuarioMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +47,10 @@ class PerfilTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.configurarLabelsQuantidadesParaEsportes()
+        tableView.beginUpdates()
         self.configurarLabelsQuantidadeEventos()
+        self.configurarLabelsQuantidadesParaEsportes()
+        tableView.endUpdates()
     }
     
     func configurarLabelsQuantidadesParaEsportes() {
@@ -154,13 +160,15 @@ class PerfilTableViewController: UITableViewController {
     
     func fazerLogOut()  {
         
-        let itensDeletados =  manager.deletar()
+        let eventoManager    = EventoDataManager()
+        let eventosDeletados = eventoManager.deletar()
+        let itensDeletados   =  manager.deletar()
         
-        if itensDeletados {
+        if eventosDeletados && itensDeletados {
             let facebookLoginManager = FBSDKLoginManager()
             facebookLoginManager.logOut()
             
-            let controllerLogin: LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppDelegate.shared.loginControllerIdentifier) as! LoginViewController
+            let controllerLogin = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: AppDelegate.shared.loginControllerIdentifier) as! LoginViewController
             self.present(controllerLogin, animated: true, completion: nil)
         }
         else {
@@ -201,12 +209,8 @@ class PerfilTableViewController: UITableViewController {
     @IBAction func unwindSalvarEsportes(segue: UIStoryboardSegue) {
     
         DataManager.shared.save()
-        self.configurarLabelsQuantidadesParaEsportes()
-        /*guard let escolhidos = controller.esportesEscolhidos else {
-            return
-        }*/
-        
-        //self.manager.adicionar(esporte: escolhidos)
     }
 
 }
+
+

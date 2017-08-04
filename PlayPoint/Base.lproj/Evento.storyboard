@@ -56,12 +56,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome do Evento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7uE-3o-w0p">
-                                                            <rect key="frame" x="0.0" y="21.5" width="111" height="34"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="339" height="34"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="7uE-3o-w0p" firstAttribute="leading" secondItem="zJZ-Vc-YTd" secondAttribute="leading" id="AjJ-xR-6nl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7uE-3o-w0p" secondAttribute="trailing" id="CYX-wI-tOQ"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -89,12 +93,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escolha o Esporte" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5f-8N-uMd">
-                                                            <rect key="frame" x="0.0" y="21.5" width="120.5" height="34"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="306" height="34"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="o5f-8N-uMd" firstAttribute="leading" secondItem="5dS-Lx-fkh" secondAttribute="leading" id="4iu-7z-Tfv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="o5f-8N-uMd" secondAttribute="trailing" id="kW5-Dv-uX1"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -125,12 +133,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escolha o Local" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21I-Lp-qwy">
-                                                            <rect key="frame" x="0.0" y="21.5" width="104.5" height="34"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="306" height="34"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="21I-Lp-qwy" firstAttribute="leading" secondItem="uxr-b2-4Oj" secondAttribute="leading" id="ADq-tO-fg7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="21I-Lp-qwy" secondAttribute="trailing" id="gyI-pQ-Vsc"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -161,12 +173,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escolha a Data/Hora" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jfX-Px-sML">
-                                                            <rect key="frame" x="0.0" y="21.5" width="135.5" height="34"/>
+                                                            <rect key="frame" x="0.0" y="21.5" width="339" height="34"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="jfX-Px-sML" secondAttribute="trailing" id="1CT-ky-4c7"/>
+                                                        <constraint firstItem="jfX-Px-sML" firstAttribute="leading" secondItem="reR-mf-h34" secondAttribute="leading" id="oN2-lH-Orv"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
