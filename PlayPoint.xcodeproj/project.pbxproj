@@ -429,7 +429,7 @@
 					7B62DD241EB171810082244F = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 9737X87RWT;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -868,6 +868,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "95107884-4378-44be-9e5f-bfb51184ed1a";
+				PROVISIONING_PROFILE_SPECIFIER = PlayPoint;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -883,6 +885,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.apesoftware.com.br.PlayPoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "95107884-4378-44be-9e5f-bfb51184ed1a";
+				PROVISIONING_PROFILE_SPECIFIER = PlayPoint;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
