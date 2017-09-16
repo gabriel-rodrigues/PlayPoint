@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        self.configurarEsportes()
+    
         self.configurarAparenciaGlobal()
         self.configurarControllerInicial()
         
@@ -37,12 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return FBSDKAccessToken.current() != nil
         
-    }
-    
-    func configurarEsportes() {
-        
-        let esporteManager = EsporteDataManager()
-        esporteManager.seedEsportes()
     }
     
     func configurarAparenciaGlobal() {
