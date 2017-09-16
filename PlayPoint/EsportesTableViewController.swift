@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import SwiftyJSON
+import SwiftSpinner
 
 class EsportesTableViewController: UITableViewController {
 
@@ -20,6 +22,7 @@ class EsportesTableViewController: UITableViewController {
     private var esportes          = [EsporteMO]()
     private var esportesFiltrados = [EsporteMO]()
     private let searchController  = UISearchController(searchResultsController: nil)
+    private let urlServer         = "https://playpoint.azurewebsites.net/api/esportes"
     
     public var isParaFavorito: Bool!
     public var usuario: UsuarioMO!
@@ -32,9 +35,64 @@ class EsportesTableViewController: UITableViewController {
         
         self.configurarButtonsCorretamente()
         self.configurarSearchController()
-        self.filtarEsportesFavoritosOrInteressados()
+        self.configurarParaPrimeiraVez()
+    }
+
+    func buscarEsportesServidor() {
+        
+        
+        var request        = URLRequest(url: URL(string: urlServer)!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (esportes, response, error) in
+            
+            guard let esportes = esportes, error == nil else {
+                self.showMessageErrorBuscarEsportes()
+                return
+            }
+            
+            let esportesJSON  = JSON(data: esportes)
+            var esportesItens = [EsporteItem]()
+            
+            for esporteJSON in esportesJSON {
+                let esporteItem = EsporteItem(json: esporteJSON.1)
+                esportesItens.append(esporteItem)
+            }
+            
+            if(!esportesItens.isEmpty) {
+                
+                SwiftSpinner.hide({
+                    self.esporteManager.seed(esportes: esportesItens)
+                    self.filtarEsportesFavoritosOrInteressados()
+                    self.tableView.reloadData()
+                })
+                
+            }
+        }
+        
+        task.resume();
+        SwiftSpinner.show("Buscando os esportes...")
     }
     
+    func showMessageErrorBuscarEsportes()
+    {
+        
+        SwiftSpinner.hide {
+            let alert = UIAlertController(title: "Oops",
+                                          message: "Não foi possível buscar todos os esportes. Tente novamente.",
+                                          preferredStyle: .alert)
+            
+            let actionOK = UIAlertAction(title: "OK",
+                                         style: .default,
+                                         handler: nil)
+            
+            alert.addAction(actionOK)
+            
+            self.present(alert,animated: true, completion: nil)
+        }
+    }
     
     func configurarButtonsCorretamente() {
         
@@ -43,6 +101,17 @@ class EsportesTableViewController: UITableViewController {
             salvarButtonItem.tintColor = UIColor.clear
         }
         
+    }
+    
+    
+    func configurarParaPrimeiraVez() {
+        
+        if(!esporteManager.esportesInseridos()) {
+            self.buscarEsportesServidor()
+        }
+        else {
+            self.filtarEsportesFavoritosOrInteressados()
+        }
     }
     
     

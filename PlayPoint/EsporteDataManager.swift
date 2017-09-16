@@ -28,7 +28,7 @@ public class EsporteDataManager {
     }
     
     
-    private func esportesInseridos() -> Bool {
+    public func esportesInseridos() -> Bool {
         
         let fetchRequest        = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.resultType = .countResultType
@@ -42,7 +42,15 @@ public class EsporteDataManager {
         return false
     }
 
-    
+    public func seed(esportes fromServer: [EsporteItem]) {
+        
+        for esporte in fromServer {
+            let esporteMO = EsporteMO(context: DataManager.shared.context)
+            esporteMO.descricao = esporte.descricao
+        }
+        
+        DataManager.shared.save();
+    }
     
     public func seedEsportes() {
         

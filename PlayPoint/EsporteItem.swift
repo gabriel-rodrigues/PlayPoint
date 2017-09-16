@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import  SwiftyJSON
 
 public struct EsporteItem {
     
@@ -16,5 +16,10 @@ public struct EsporteItem {
     public init (esporte mo: EsporteMO) {
         
         self.descricao = mo.descricao!
+    }
+    
+    public init (json esporte: JSON) {
+        
+        self.descricao = esporte["descricao"].stringValue
     }
 }
